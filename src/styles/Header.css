@@ -10,13 +10,13 @@
 .centeredHeader {
   border: solid 2px green;
   display: flex;
+  justify-content: space-between;
+  align-items: center;
   width: 95%;
 }
 
 .logoContainer {
-  border: solid 2px white;
   display: flex;
-  justify-self: flex-start;
   width: 15rem;
 }
 
@@ -37,4 +37,52 @@
   font-size: 1.5rem;
   font-weight: 600;
   margin: 0;
+}
+
+.hambBtnContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 5rem;
+  height: 100%;
+}
+
+#hambBtnFlipper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: .3s cubic-bezier(.775, .07, .575, .995);
+  transform-style: preserve-3d;
+  position: absolute;
+}
+
+.menu.active {
+  transform: rotateX(180deg);
+}
+
+.hambBtnOpened {
+  background-color: var(--mediumCarmine);
+  color: var(--bisque);
+  border: none;
+  display: flex;
+  align-items: center;
+  font-size: 2rem;
+
+  backface-visibility: hidden;
+  z-index: 2;
+  transform: rotateX(0deg);
+  position: absolute;
+}
+
+.hambBtnClosed {
+  background-color: var(--mediumCarmine);
+  color: var(--bisque);
+  border: none;
+  display: flex;
+  align-items: center;
+  font-size: 2rem;
+
+  backface-visibility: hidden;
+  transform: rotateX(-180deg);
+  position: relative;
 }

@@ -1,9 +1,12 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import baristappLogo from '../../images/baristapp-logo.png';
+import HamburguerBtn from './HamburguerBtn';
 import '../../styles/Header.css';
 
 function Header() {
+  const [isHambMenuOpen, setIsHambMenuOpen] = React.useState(false);
+
   return (
     <header className="header">
       <div className="centeredHeader">
@@ -13,6 +16,10 @@ function Header() {
             <h1>baristapp</h1>
           </Link>
         </div>
+        <HamburguerBtn
+          isHambMenuOpen={ isHambMenuOpen }
+          setIsHambMenuOpen={ setIsHambMenuOpen }
+        />
       </div>
     </header>
   );
