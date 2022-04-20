@@ -1,0 +1,40 @@
+.header {
+  background-color: var(--mediumCarmine);
+  display: flex;
+  justify-content: center;
+  padding: 2%;
+  top: 0;
+  margin-bottom: 0;
+}
+
+.centeredHeader {
+  border: solid 2px green;
+  display: flex;
+  width: 95%;
+}
+
+.logoContainer {
+  border: solid 2px white;
+  display: flex;
+  justify-self: flex-start;
+  width: 15rem;
+}
+
+.logoContainer a {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  text-decoration: none;
+}
+
+.logoContainer a img {
+  width: 5rem;
+  margin-right: 1rem;
+}
+
+.logoContainer a h1 {
+  color: var(--bisque);
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin: 0;
+}

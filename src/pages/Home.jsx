@@ -1,6 +1,8 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
 import capsulesAC from '../redux/actions/capsulesAC';
+import Header from '../components/header/Header';
+import '../styles/Home.css';
 
 function Home() {
   const ALL_CAPSULES_ENDPOINT = 'https://barista-app-back.herokuapp.com/capsules';
@@ -26,7 +28,7 @@ function Home() {
   return (
     <div className="homePage">
       {console.log(isFetching)}
-      HOME PAGE
+      <Header />
     </div>
   );
 }
