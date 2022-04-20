@@ -1,5 +1,8 @@
 import { combineReducers } from 'redux';
+import capsules from './capsules';
 
-const rootReducer = combineReducers({});
+const rootReducer = combineReducers({
+  capsules,
+});
 
 export default rootReducer;
