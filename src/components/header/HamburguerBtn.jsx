@@ -6,12 +6,7 @@ function HamburguerBtn({ isHambMenuOpen, setIsHambMenuOpen }) {
   // REF: https://codepen.io/diegotorres/pen/WxaxKo
 
   const onClickHambBtn = () => {
-    if (isHambMenuOpen === true) {
-      setIsHambMenuOpen(false);
-    }
-    if (isHambMenuOpen === false) {
-      setIsHambMenuOpen(true);
-    }
+    setIsHambMenuOpen(!isHambMenuOpen);
   };
 
   return (

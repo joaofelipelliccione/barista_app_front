@@ -1,12 +1,32 @@
 /* eslint-disable max-len */
 import React from 'react';
+import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import '../../styles/Header.css';
 
-function HamburgerContent() {
+function HamburgerContent({ isHambMenuOpen, setIsHambMenuOpen }) {
+  const dropdownRef = React.useRef(null);
+
+  React.useEffect(() => {
+    const pageClickEvent = ({ target }) => {
+      if (dropdownRef.current !== null && !dropdownRef.current.contains(target)) {
+        setIsHambMenuOpen(!isHambMenuOpen);
+      }
+    };
+
+    if (isHambMenuOpen) {
+      window.addEventListener('touchstart', pageClickEvent);
+    }
+
+    return () => {
+      window.removeEventListener('touchstart', pageClickEvent);
+    };
+  }, [isHambMenuOpen]);
+
   return (
     <div
       className="hambContentContainer slide-bottom"
+      ref={ dropdownRef }
     >
       <div className="hambContentSubContainer1">
         <Link
@@ -40,5 +60,10 @@ function HamburgerContent() {
     </div>
   );
 }
+
+HamburgerContent.propTypes = {
+  isHambMenuOpen: PropTypes.bool.isRequired,
+  setIsHambMenuOpen: PropTypes.func.isRequired,
+};
 
 export default HamburgerContent;
