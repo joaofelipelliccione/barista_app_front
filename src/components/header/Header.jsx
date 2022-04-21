@@ -22,7 +22,11 @@ function Header() {
           setIsHambMenuOpen={ setIsHambMenuOpen }
         />
       </div>
-      {!isHambMenuOpen && <HamburgerContent />}
+      {isHambMenuOpen && (
+        <HamburgerContent
+          isHambMenuOpen={ isHambMenuOpen }
+          setIsHambMenuOpen={ setIsHambMenuOpen }
+        />)}
     </header>
   );
 }

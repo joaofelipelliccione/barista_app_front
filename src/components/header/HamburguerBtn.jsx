@@ -23,14 +23,14 @@ function HamburguerBtn({ isHambMenuOpen, setIsHambMenuOpen }) {
         <button
           className="hambBtnOpened"
           type="button"
-          onClick={ () => onClickHambBtn() }
+          onClick={ onClickHambBtn }
         >
           <AiOutlineMenu />
         </button>
         <button
           className="hambBtnClosed"
           type="button"
-          onClick={ () => onClickHambBtn() }
+          onClick={ onClickHambBtn }
         >
           <AiOutlineClose />
         </button>

@@ -5,7 +5,9 @@ import '../../styles/Header.css';
 
 function HamburgerContent() {
   return (
-    <div className="hambContentContainer">
+    <div
+      className="hambContentContainer slide-bottom"
+    >
       <div className="hambContentSubContainer1">
         <Link
           className="capsulesLinks"
