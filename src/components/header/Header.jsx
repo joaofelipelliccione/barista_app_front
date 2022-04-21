@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import baristappLogo from '../../images/baristapp-logo.png';
 import HamburguerBtn from './HamburguerBtn';
+import HamburgerContent from './HamburgerContent';
 import '../../styles/Header.css';
 
 function Header() {
@@ -21,6 +22,7 @@ function Header() {
           setIsHambMenuOpen={ setIsHambMenuOpen }
         />
       </div>
+      {!isHambMenuOpen && <HamburgerContent />}
     </header>
   );
 }
