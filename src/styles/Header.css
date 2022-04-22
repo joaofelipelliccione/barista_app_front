@@ -10,7 +10,6 @@
 }
 
 .centeredHeader {
-  border: solid 2px green;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -91,7 +90,6 @@
 }
 
 .hambContentContainer {
-  /* border: solid 2px ghostwhite; */
   display: flex;
   flex-direction: column;
   align-items: center;

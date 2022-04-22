@@ -29,6 +29,9 @@ function Home() {
     <div className="homePage">
       {console.log(isFetching)}
       <Header />
+      <main className="homePageMain">
+        <h1>Ache sua capsula Nespresso!</h1>
+      </main>
     </div>
   );
 }
