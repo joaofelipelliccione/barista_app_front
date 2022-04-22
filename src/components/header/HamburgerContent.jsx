@@ -15,11 +15,11 @@ function HamburgerContent({ isHambMenuOpen, setIsHambMenuOpen }) {
     };
 
     if (isHambMenuOpen) {
-      window.addEventListener('touchstart', pageClickEvent);
+      window.addEventListener('click', pageClickEvent, true);
     }
 
     return () => {
-      window.removeEventListener('touchstart', pageClickEvent);
+      window.removeEventListener('click', pageClickEvent, true);
     };
   }, [isHambMenuOpen]);
 
