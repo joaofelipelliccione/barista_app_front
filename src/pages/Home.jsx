@@ -10,6 +10,7 @@ function Home() {
 
   const [isFetching, setIsFetching] = React.useState(false);
   const [searchMethod, setSearchMethod] = React.useState('name');
+  const [searchedCapsule, setSearchedCapsule] = React.useState('');
 
   const dispatch = useDispatch();
 
@@ -27,6 +28,10 @@ function Home() {
     setIsFetching(false);
   }, []);
 
+  const onClickSearchBtn = () => {
+    console.log(`Pesquisou por ${searchedCapsule}`);
+  };
+
   return (
     <div className="homePage">
       {console.log(isFetching)}
@@ -36,6 +41,9 @@ function Home() {
         <SearchMethods
           searchMethod={ searchMethod }
           setSearchMethod={ setSearchMethod }
+          searchedCapsule={ searchedCapsule }
+          setSearchedCapsule={ setSearchedCapsule }
+          onClickSearchBtn={ onClickSearchBtn }
         />
       </main>
     </div>
