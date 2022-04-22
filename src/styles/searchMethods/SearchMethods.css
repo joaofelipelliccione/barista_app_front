@@ -1,0 +1,28 @@
+.searchMethodsContainer {
+  /* border: solid 2px red; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 80%;
+  margin-top: 1.2rem;
+}
+
+.searchMethodsRdBtnsContainer {
+  display: flex;
+  justify-content: space-evenly;
+  width: 80%;
+  margin-bottom: 1rem;
+}
+
+.searchMethodsRdBtns {
+  color: var(--antiqueWhite);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1.4rem;
+  font-weight: 700;
+}
+
+#searchByNameInput, #searchByFiltersInput {
+  margin-right: 0.5rem;
+}

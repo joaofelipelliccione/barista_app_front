@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { BsSearch } from 'react-icons/bs';
-// import '../../styles/SearchBar.css';
+import '../../styles/searchMethods/SearchBar.css';
 
 function SearchBar({ searchedCapsule, setSearchedCapsule, onClickSearchBtn }) {
   const searchWithEnter = (e) => {

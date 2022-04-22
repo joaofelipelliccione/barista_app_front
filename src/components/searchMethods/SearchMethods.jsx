@@ -2,11 +2,12 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Radios from './Radios';
 import SearchBar from './SearchBar';
+import '../../styles/searchMethods/SearchMethods.css';
 
 function SearchMethods({ searchMethod, setSearchMethod,
   searchedCapsule, setSearchedCapsule, onClickSearchBtn }) {
   return (
-    <div className="searchMethodContainer">
+    <div className="searchMethodsContainer">
       <Radios
         setSearchMethod={ setSearchMethod }
       />
