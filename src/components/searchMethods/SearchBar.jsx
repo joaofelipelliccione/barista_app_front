@@ -1,9 +1,15 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { useSelector } from 'react-redux';
+import Select from 'react-select';
 import { BsSearch } from 'react-icons/bs';
 import '../../styles/searchMethods/SearchBar.css';
 
 function SearchBar({ searchedCapsule, setSearchedCapsule, onClickSearchBtn }) {
+  const allCapsulesArr = useSelector((state) => state.capsules).allCapsules
+    .map(({ capsuleName }) => capsuleName);
+  const reactSelectArr = allCapsulesArr.map((opt) => ({ label: opt, value: opt }));
+
   const searchWithEnter = (e) => {
     e.preventDefault();
     onClickSearchBtn();
@@ -11,12 +17,10 @@ function SearchBar({ searchedCapsule, setSearchedCapsule, onClickSearchBtn }) {
 
   return (
     <section className="searchBarContainer">
-      <input
-        type="text"
+      <Select
+        options={ reactSelectArr }
         placeholder="Volluto"
-        value={ searchedCapsule }
-        onChange={ ({ target }) => setSearchedCapsule(target.value) }
-        // onFocus={ () => {} }
+        onChange={ (opt) => setSearchedCapsule(opt.value) }
         onKeyPress={ (event) => event.key === 'Enter'
         && searchWithEnter(event) }
       />

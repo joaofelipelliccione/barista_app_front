@@ -6,28 +6,25 @@
   width: 30rem;
 }
 
-.searchBarContainer input[ type = 'text' ] {
-  border: solid 1px var(--antiqueWhite);
-  background-color: var(--mediumCarmine);
-  color: var(--antiqueWhite);
-  border-radius: 0.3rem;
-  font-size: 1.3rem;
-  font-weight: 600;
-  width: 75%;
-  height: 2.5rem;
-  padding-left: 0.5rem;
-  transition: 0.3s width ease-in-out;
+.css-b62m3t-container {
+  width: 75% !important;
 }
 
-.searchBarContainer input[ type = 'text' ]:focus {
-  color: var(--antiqueWhite);
-  outline: none;
-  width: 85%;
+.css-1s2u09g-control {
+  background-color: var(--mediumCarmine) !important;
 }
 
-.searchBarContainer input[ type = 'text' ]::placeholder {
-  color: var(--antiqueWhite);
-  opacity: 0.5;
+.css-qc6sy-singleValue {
+  color: var(--antiqueWhite) !important;
+  font-size: 1.2rem !important;
+  font-weight: 700 !important;
+}
+
+#react-select-2-placeholder{
+  color: var(--antiqueWhite) !important;
+  font-size: 1.2rem !important;
+  font-weight: 700 !important;
+  opacity: 0.5 !important;
 }
 
 .searchBarContainer button {
