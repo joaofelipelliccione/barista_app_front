@@ -35,7 +35,9 @@ function Home() {
   return (
     <div className="homePage">
       {console.log(isFetching)}
-      <Header />
+      <Header
+        isFetching={ isFetching }
+      />
       <main className="homePageMain">
         <h1>Ache sua capsula Nespresso...</h1>
         <SearchMethods
