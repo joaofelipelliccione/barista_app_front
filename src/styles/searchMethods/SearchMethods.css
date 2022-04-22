@@ -4,14 +4,14 @@
   flex-direction: column;
   align-items: center;
   width: 80%;
-  margin-top: 1.2rem;
+  margin: 1.5rem 0;
 }
 
 .searchMethodsRdBtnsContainer {
   display: flex;
   justify-content: space-evenly;
   width: 80%;
-  margin-bottom: 1rem;
+  margin-bottom: 1.5rem;
 }
 
 .searchMethodsRdBtns {
@@ -19,7 +19,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  font-size: 1.4rem;
+  font-size: 1.3rem;
   font-weight: 700;
 }
 

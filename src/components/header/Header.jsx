@@ -9,7 +9,10 @@ function Header() {
   const [isHambMenuOpen, setIsHambMenuOpen] = React.useState(false);
 
   return (
-    <header className="header">
+    <header
+      className="header"
+      style={ { borderBottom: isHambMenuOpen && 'solid 1px wheat' } }
+    >
       <div className="centeredHeader">
         <div className="logoContainer">
           <Link to="/">
