@@ -14,7 +14,22 @@ function RenderedCapsules({ capsulesToRender }) {
             key={ capsule.capsuleId }
             className="eachCapsuleCard"
           >
-            <p>{capsule.capsuleId}</p>
+            <img
+              src={ capsule.capsuleImgSrc }
+              alt="Imagem da capsula"
+            />
+            <div>
+              <h3>{ capsule.capsuleName }</h3>
+              <h4>{ `linha: ${capsule.capsuleLine}` }</h4>
+              <h5>
+                { capsule.capsuleType === 'Original' ? (
+                  `intensidade: ${capsule.capsuleIntensity}/13`
+                ) : (
+                  `intensidade: ${capsule.capsuleIntensity}/11`
+                )}
+
+              </h5>
+            </div>
           </Link>
         ))}
       </article>
