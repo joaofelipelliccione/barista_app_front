@@ -25,7 +25,6 @@ function HamburguerBtn({ isHambMenuOpen, setIsHambMenuOpen }) {
         <button
           className="hambBtnClosed"
           type="button"
-          onClick={ onClickHambBtn }
         >
           <AiOutlineClose />
         </button>
