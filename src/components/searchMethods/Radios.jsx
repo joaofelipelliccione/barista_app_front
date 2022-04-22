@@ -14,7 +14,7 @@ function Radios({ setSearchMethod }) {
           type="radio"
           value="name"
           onClick={ ({ target }) => setSearchMethod(target.value) }
-          checked
+          defaultChecked
         />
         ...por nome
       </label>
