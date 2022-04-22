@@ -29,7 +29,6 @@ function HamburguerBtn({ isHambMenuOpen, setIsHambMenuOpen }) {
           <AiOutlineClose />
         </button>
       </div>
-
     </div>
   );
 }
