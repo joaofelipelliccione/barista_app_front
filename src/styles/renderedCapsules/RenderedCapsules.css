@@ -1,5 +1,5 @@
 .renderedCapsulesContainer {
-  background-color: var(--philippineBronze);
+  background-color: var(--americanBronze);
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -8,9 +8,43 @@
 }
 
 .renderedCapsulesContainer h1 {
-  border: solid 2px blue;
   color: var(--bisque);
   width: fit-content;
   font-size: 1.6rem;
   font-weight: 700;
 }
+
+.capsulesCardsContainer {
+  /* border: solid 2px white; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  height: 50rem;
+  overflow-y: scroll;
+  padding: 0.8rem 0;
+}
+
+.capsulesCardsContainer::-webkit-scrollbar {
+  width: 0.2rem;
+}
+
+.capsulesCardsContainer::-webkit-scrollbar-thumb {
+  background: var(--bisque);
+}
+
+.eachCapsuleCard {
+  background-color: var(--fawn);
+  border-radius: 0.3rem;
+  width: 20rem;
+  margin: 0.8rem 0;
+  text-decoration: none;
+}
+
+/* .eachCapsuleCard a {
+  border: solid 2px blue;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+} */
