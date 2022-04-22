@@ -6,7 +6,6 @@
 
 .homePageMain {
   background-color: var(--mediumCarmine);
-  /* border: solid 2px red; */
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -15,7 +14,6 @@
 }
 
 .homePageMain h1 {
-  /* border: solid 2px blue; */
   color: var(--bisque);
   width: fit-content;
   font-size: 1.8rem;

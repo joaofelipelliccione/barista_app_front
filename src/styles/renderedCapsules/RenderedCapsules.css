@@ -1,0 +1,16 @@
+.renderedCapsulesContainer {
+  background-color: var(--philippineBronze);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem 0;
+}
+
+.renderedCapsulesContainer h1 {
+  border: solid 2px blue;
+  color: var(--bisque);
+  width: fit-content;
+  font-size: 1.6rem;
+  font-weight: 700;
+}

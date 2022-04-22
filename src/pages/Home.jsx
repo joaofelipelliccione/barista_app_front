@@ -3,12 +3,14 @@ import { useDispatch } from 'react-redux';
 import capsulesAC from '../redux/actions/capsulesAC';
 import Header from '../components/header/Header';
 import SearchMethods from '../components/searchMethods/SearchMethods';
+import RenderedCapsules from '../components/renderedCapsules/RenderedCapsules';
 import '../styles/Home.css';
 
 function Home() {
   const ALL_CAPSULES_ENDPOINT = 'https://barista-app-back.herokuapp.com/capsules';
 
   const [isFetching, setIsFetching] = React.useState(false);
+  const [capsulesToRender, setCapsulesToRender] = React.useState([]);
   const [searchMethod, setSearchMethod] = React.useState('name');
   const [searchedCapsule, setSearchedCapsule] = React.useState('');
 
@@ -21,6 +23,7 @@ function Home() {
     fetch(ALL_CAPSULES_ENDPOINT)
       .then((res) => res.json())
       .then((data) => {
+        setCapsulesToRender(data);
         dispatch(capsulesAC(data));
         localStorage.setItem('allCapsules', JSON.stringify(data));
       });
@@ -34,7 +37,6 @@ function Home() {
 
   return (
     <div className="homePage">
-      {console.log(isFetching)}
       <Header
         isFetching={ isFetching }
       />
@@ -48,6 +50,9 @@ function Home() {
           onClickSearchBtn={ onClickSearchBtn }
         />
       </main>
+      <RenderedCapsules
+        capsulesToRender={ capsulesToRender }
+      />
     </div>
   );
 }
