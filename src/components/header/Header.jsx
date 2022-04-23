@@ -16,6 +16,7 @@ function Header({ isFetching }) {
     >
       <div className="centeredHeader">
         <div className="logoContainer">
+          {console.log(isFetching)}
           <Link to="/">
             { !isFetching ? (
               <img src={ baristappLogo } alt="Logo Baristapp" />

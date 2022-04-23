@@ -6,7 +6,7 @@ import '../../styles/renderedCapsules/RenderedCapsules.css';
 function RenderedCapsules({ capsulesToRender }) {
   return (
     <section className="renderedCapsulesContainer">
-      <h1>Capsulas</h1>
+      <h1>Cápsulas</h1>
       <article className="capsulesCardsContainer">
         {capsulesToRender.map((capsule) => (
           <Link

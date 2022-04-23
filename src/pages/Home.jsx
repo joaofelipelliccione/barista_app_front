@@ -17,8 +17,8 @@ function Home() {
   const dispatch = useDispatch();
 
   React.useEffect(() => {
-    setIsFetching(true);
     localStorage.removeItem('allCapsules');
+    setIsFetching(true);
 
     fetch(ALL_CAPSULES_ENDPOINT)
       .then((res) => res.json())
@@ -26,9 +26,8 @@ function Home() {
         setCapsulesToRender(data);
         dispatch(capsulesAC(data));
         localStorage.setItem('allCapsules', JSON.stringify(data));
+        setIsFetching(false);
       });
-
-    setIsFetching(false);
   }, []);
 
   const onClickSearchBtn = async () => {
@@ -48,7 +47,7 @@ function Home() {
         isFetching={ isFetching }
       />
       <main className="homePageMain">
-        <h1>Ache sua capsula Nespresso®...</h1>
+        <h1>Ache sua cápsula Nespresso®...</h1>
         <SearchMethods
           searchMethod={ searchMethod }
           setSearchMethod={ setSearchMethod }
