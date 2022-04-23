@@ -5,7 +5,8 @@ import SearchBar from './SearchBar';
 import '../../styles/searchMethods/SearchMethods.css';
 
 function SearchMethods({ searchMethod, setSearchMethod,
-  searchedCapsule, setSearchedCapsule, onClickSearchBtn }) {
+  searchedCapsule, setSearchedCapsule, onClickSearchBtn,
+  setCapsulesToRender }) {
   return (
     <div className="searchMethodsContainer">
       <Radios
@@ -16,6 +17,7 @@ function SearchMethods({ searchMethod, setSearchMethod,
           searchedCapsule={ searchedCapsule }
           setSearchedCapsule={ setSearchedCapsule }
           onClickSearchBtn={ onClickSearchBtn }
+          setCapsulesToRender={ setCapsulesToRender }
         />
       ) : (
         <p>FILTROS</p>
@@ -30,6 +32,7 @@ SearchMethods.propTypes = {
   searchedCapsule: PropTypes.string.isRequired,
   setSearchedCapsule: PropTypes.func.isRequired,
   onClickSearchBtn: PropTypes.func.isRequired,
+  setCapsulesToRender: PropTypes.func.isRequired,
 };
 
 export default SearchMethods;

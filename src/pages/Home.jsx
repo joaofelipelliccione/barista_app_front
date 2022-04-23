@@ -31,8 +31,12 @@ function Home() {
     setIsFetching(false);
   }, []);
 
-  const onClickSearchBtn = () => {
-    console.log(`Pesquisou por ${searchedCapsule}`);
+  const onClickSearchBtn = async () => {
+    const SEARCH_ONE_CAPSULE_ENDPOINT = `https://barista-app-back.herokuapp.com/capsules/search?capsuleName=${searchedCapsule}`;
+    const res = await fetch(SEARCH_ONE_CAPSULE_ENDPOINT);
+    const data = await res.json();
+
+    setCapsulesToRender(data);
   };
 
   return (
@@ -48,6 +52,7 @@ function Home() {
           searchedCapsule={ searchedCapsule }
           setSearchedCapsule={ setSearchedCapsule }
           onClickSearchBtn={ onClickSearchBtn }
+          setCapsulesToRender={ setCapsulesToRender }
         />
       </main>
       <RenderedCapsules

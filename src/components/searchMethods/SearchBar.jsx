@@ -5,15 +5,11 @@ import Select from 'react-select';
 import { BsSearch } from 'react-icons/bs';
 import '../../styles/searchMethods/SearchBar.css';
 
-function SearchBar({ searchedCapsule, setSearchedCapsule, onClickSearchBtn }) {
-  const allCapsulesArr = useSelector((state) => state.capsules).allCapsules
-    .map(({ capsuleName }) => capsuleName);
-  const reactSelectArr = allCapsulesArr.map((opt) => ({ label: opt, value: opt }));
-
-  const searchWithEnter = (e) => {
-    e.preventDefault();
-    onClickSearchBtn();
-  };
+function SearchBar({ searchedCapsule, setSearchedCapsule,
+  onClickSearchBtn, setCapsulesToRender }) {
+  const allCapsulesArr = useSelector((state) => state.capsules).allCapsules;
+  const allCapsulesNamesArr = allCapsulesArr.map(({ capsuleName }) => capsuleName);
+  const reactSelectArr = allCapsulesNamesArr.map((opt) => ({ label: opt, value: opt }));
 
   return (
     <section className="searchBarContainer">
@@ -21,8 +17,12 @@ function SearchBar({ searchedCapsule, setSearchedCapsule, onClickSearchBtn }) {
         options={ reactSelectArr }
         placeholder="Volluto"
         onChange={ (opt) => setSearchedCapsule(opt.value) }
-        onKeyPress={ (event) => event.key === 'Enter'
-        && searchWithEnter(event) }
+        onFocus={ () => {
+          const inputFieldValue = document.querySelector('.css-qc6sy-singleValue');
+          setCapsulesToRender(allCapsulesArr);
+          setSearchedCapsule('');
+          inputFieldValue.innerText = '';
+        } }
       />
       <button
         className="searchBtn"
@@ -40,6 +40,7 @@ SearchBar.propTypes = {
   searchedCapsule: PropTypes.string.isRequired,
   setSearchedCapsule: PropTypes.func.isRequired,
   onClickSearchBtn: PropTypes.func.isRequired,
+  setCapsulesToRender: PropTypes.func.isRequired,
 };
 
 export default SearchBar;
