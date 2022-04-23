@@ -48,7 +48,7 @@ function Home() {
         isFetching={ isFetching }
       />
       <main className="homePageMain">
-        <h1>Ache sua capsula Nespresso...</h1>
+        <h1>Ache sua capsula Nespresso®...</h1>
         <SearchMethods
           searchMethod={ searchMethod }
           setSearchMethod={ setSearchMethod }

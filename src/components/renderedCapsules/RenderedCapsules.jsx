@@ -19,16 +19,16 @@ function RenderedCapsules({ capsulesToRender }) {
               alt="Imagem da capsula"
             />
             <div>
-              <h3>{ capsule.capsuleName }</h3>
-              <h4>{ `linha: ${capsule.capsuleLine}` }</h4>
-              <h5>
+              <h2>{ capsule.capsuleName }</h2>
+              <h3>{ capsule.capsuleLine }</h3>
+              <h4>
                 { capsule.capsuleType === 'Original' ? (
                   `intensidade: ${capsule.capsuleIntensity}/13`
                 ) : (
                   `intensidade: ${capsule.capsuleIntensity}/11`
                 )}
 
-              </h5>
+              </h4>
             </div>
           </Link>
         ))}

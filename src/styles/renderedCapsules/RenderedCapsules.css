@@ -35,11 +35,13 @@
 
 .eachCapsuleCard {
   background-color: var(--fawn);
-  border-radius: 0.3rem;
+  border-radius: 5px 17px;
   display: flex;
+  align-items: center;
   width: 21rem;
   margin: 0.8rem 0;
   text-decoration: none;
+  padding: 0.8rem;
 }
 
 .eachCapsuleCard img {
@@ -53,20 +55,23 @@
   flex-direction: column;
   align-items: center;
   width: 100%;
-  padding: 0.2rem;
+}
+
+.eachCapsuleCard h2 {
+  color: var(--americanBronze);
+  font-size: 1.15rem;
+  text-align: center;
+  margin-bottom: 0;
 }
 
 .eachCapsuleCard h3 {
-  color: var(--americanBronze);
-  font-size: 1rem;
+  color: var(--brown);
+  font-size: 0.97rem;
+  margin-top: 0;
+  margin-bottom: 0.5rem;
 }
 
 .eachCapsuleCard h4 {
-  color: var(--brown);
-  font-size: 0.95rem;
-}
-
-.eachCapsuleCard h5 {
   color: var(--philippineBronze);
   font-size: 0.95rem;
 }
