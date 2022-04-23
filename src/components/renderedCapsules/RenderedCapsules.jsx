@@ -1,9 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
+import squaresMachine from '../../sharedFunctions/squaresMachine';
 import '../../styles/renderedCapsules/RenderedCapsules.css';
 
 function RenderedCapsules({ capsulesToRender }) {
+  const FIVE = 5;
+
   return (
     <section className="renderedCapsulesContainer">
       <h1>Cápsulas</h1>
@@ -30,12 +33,20 @@ function RenderedCapsules({ capsulesToRender }) {
               </h4>
               <div className="eachCapsuleCardContainer1-1">
                 <div className="eachCapsuleCardContainer1-1-1">
-                  <span>Torra:</span>
-                  <span>Acidez:</span>
+                  <span>
+                    {`Torra: ${squaresMachine(capsule.capsuleRoastingLevel, FIVE)}`}
+                  </span>
+                  <span>
+                    {`Acidez: ${squaresMachine(capsule.capsuleAcidityLevel, FIVE)}`}
+                  </span>
                 </div>
                 <div className="eachCapsuleCardContainer1-1-2">
-                  <span>Amargor:</span>
-                  <span>Corpo:</span>
+                  <span>
+                    {`Amargor: ${squaresMachine(capsule.capsuleBitternessLevel, FIVE)}`}
+                  </span>
+                  <span>
+                    {`Corpo: ${squaresMachine(capsule.capsuleRobustnessLevel, FIVE)}`}
+                  </span>
                 </div>
               </div>
             </div>

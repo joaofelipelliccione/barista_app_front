@@ -38,7 +38,7 @@
   border-radius: 5px 17px;
   display: flex;
   align-items: center;
-  width: 23rem;
+  width: 26rem;
   margin: 0.8rem 0;
   text-decoration: none;
   padding: 0.8rem;
@@ -47,7 +47,7 @@
 .eachCapsuleCard img {
   width: 4rem;
   height: 4rem;
-  margin-right: 1rem;
+  margin-right: 0.5rem;
 }
 
 .eachCapsuleCardContainer1 {
@@ -69,32 +69,31 @@
   color: var(--brown);
   font-size: 1.05rem;
   margin-top: 0;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.1rem;
 }
 
 .eachCapsuleCardContainer1 h4 {
   color: var(--philippineBronze);
   font-size: 1rem;
-  margin-bottom: 0;
+  margin-bottom: 0.5rem;
 }
 
 .eachCapsuleCardContainer1-1 {
-  border: solid 2px green;
+  border-top: dotted 1px var(--philippineBronze);
   display: flex;
   justify-content: space-evenly;
-  width: 100%;
+  align-items: center;
+  width: 90%;
+  padding-top: 0.5rem;
 }
 
-.eachCapsuleCardContainer1-1-1 {
-  border: solid 2px white;
+.eachCapsuleCardContainer1-1-1, .eachCapsuleCardContainer1-1-2 {
+  color: var(--rootBeer);
   display: flex;
   flex-direction: column;
+  font-size: 0.95rem;
+  font-weight: 600;
+  align-items: center;
   width: 50%;
-}
-
-.eachCapsuleCardContainer1-1-2 {
-  border: solid 2px pink;
-  display: flex;
-  flex-direction: column;
-  width: 50%;
+  text-decoration: none;
 }
