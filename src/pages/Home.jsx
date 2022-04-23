@@ -33,10 +33,13 @@ function Home() {
 
   const onClickSearchBtn = async () => {
     const SEARCH_ONE_CAPSULE_ENDPOINT = `https://barista-app-back.herokuapp.com/capsules/search?capsuleName=${searchedCapsule}`;
+
+    setIsFetching(true);
     const res = await fetch(SEARCH_ONE_CAPSULE_ENDPOINT);
     const data = await res.json();
 
     setCapsulesToRender(data);
+    setIsFetching(false);
   };
 
   return (
