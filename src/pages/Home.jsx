@@ -4,6 +4,7 @@ import capsulesAC from '../redux/actions/capsulesAC';
 import Header from '../components/header/Header';
 import SearchMethods from '../components/searchMethods/SearchMethods';
 import RenderedCapsules from '../components/renderedCapsules/RenderedCapsules';
+import Footer from '../components/Footer';
 import '../styles/Home.css';
 
 function Home() {
@@ -60,6 +61,7 @@ function Home() {
       <RenderedCapsules
         capsulesToRender={ capsulesToRender }
       />
+      <Footer />
     </div>
   );
 }
