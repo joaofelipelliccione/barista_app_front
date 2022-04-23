@@ -28,3 +28,33 @@
 #searchByNameInput, #searchByFiltersInput {
   margin-right: 0.5rem;
 }
+
+input[type="radio"] {
+  appearance: none;
+  background-color: var(--antiqueWhite);
+  margin: 0;
+  font: inherit;
+  color: currentColor;
+  width: 1.4rem;
+  height: 1.4rem;
+  border: 0.15em solid currentColor;
+  border-radius: 50%;
+  transform: translateY(-0.075em);
+  display: grid;
+  place-content: center;
+}
+
+input[type="radio"]::before {
+  background-color: var(--philippineBronze);
+  content: "";
+  width: 0.8rem;
+  height: 0.8rem;
+  border-radius: 50%;
+  transform: scale(0);
+  transition: 120ms transform ease-in-out;
+  box-shadow: inset 1em 1em var(--form-control-color);
+}
+
+input[type="radio"]:checked::before {
+  transform: scale(1);
+}
