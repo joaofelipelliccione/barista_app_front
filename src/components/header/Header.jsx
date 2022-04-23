@@ -39,7 +39,11 @@ function Header({ isFetching }) {
 }
 
 Header.propTypes = {
-  isFetching: PropTypes.bool.isRequired,
+  isFetching: PropTypes.bool,
+};
+
+Header.defaultProps = {
+  isFetching: false,
 };
 
 export default Header;

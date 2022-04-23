@@ -13,7 +13,7 @@ function RenderedCapsules({ capsulesToRender }) {
       <article className="capsulesCardsContainer">
         {capsulesToRender.map((capsule) => (
           <Link
-            to={ `/capsules/${capsule.capsuleId}` }
+            to={ `/capsule/${capsule.capsuleId}` }
             key={ capsule.capsuleId }
             className="eachCapsuleCard"
           >
