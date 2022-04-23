@@ -16,6 +16,18 @@ function CapsuleDetails() {
       {console.log(capsuleInfo)}
       <Header />
       <main className="capsuleDetailsMain">
+        <img
+          className="capsuleBackgroundImg"
+          src={ capsuleInfo.backgroundImgSrc }
+          alt="Imagem de capa"
+        />
+        <div className="capsuleNameAndImg">
+          <img
+            src={ capsuleInfo.capsuleImgSrc }
+            alt="Imagem da capsula"
+          />
+          <h1>{ capsuleInfo.capsuleName }</h1>
+        </div>
         <section className="capsuleDetailsContainer1">
           OI
         </section>

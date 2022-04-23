@@ -1,17 +1,40 @@
-.capsuleDetailsPage {
-  border: solid 2px green;
-}
-
 .capsuleDetailsMain {
-  background-color: pink;
+  background-color: var(--mediumCarmine);
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
 }
 
+.capsuleBackgroundImg {
+  width: 100vw;
+  height: 25vh;
+}
+
+.capsuleNameAndImg {
+  border-radius: 0.4rem;
+  display: flex;
+  align-self: flex-start;
+  align-items: center;
+  width: fit-content;
+  margin-top: -4.3rem;
+  margin-left: 0.2rem;
+  padding: 0.5rem;
+}
+
+.capsuleNameAndImg img {
+  width: 6rem;
+  height: 6rem;
+  margin-right: 0.5rem;
+}
+
+.capsuleNameAndImg h1 {
+  color: var(--antiqueWhite);
+  font-size: 2rem;
+}
+
 .capsuleDetailsContainer1 {
-  border: solid 2px red;
+  background-color: var(--americanBronze);
   display: flex;
   width: 100%;
 }
