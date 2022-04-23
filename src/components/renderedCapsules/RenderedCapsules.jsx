@@ -18,7 +18,7 @@ function RenderedCapsules({ capsulesToRender }) {
               src={ capsule.capsuleImgSrc }
               alt="Imagem da capsula"
             />
-            <div>
+            <div className="eachCapsuleCardContainer1">
               <h2>{ capsule.capsuleName }</h2>
               <h3>{ capsule.capsuleLine }</h3>
               <h4>
@@ -27,8 +27,17 @@ function RenderedCapsules({ capsulesToRender }) {
                 ) : (
                   `intensidade: ${capsule.capsuleIntensity}/11`
                 )}
-
               </h4>
+              <div className="eachCapsuleCardContainer1-1">
+                <div className="eachCapsuleCardContainer1-1-1">
+                  <span>Torra:</span>
+                  <span>Acidez:</span>
+                </div>
+                <div className="eachCapsuleCardContainer1-1-2">
+                  <span>Amargor:</span>
+                  <span>Corpo:</span>
+                </div>
+              </div>
             </div>
           </Link>
         ))}
