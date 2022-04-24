@@ -57,6 +57,13 @@ function CapsuleDetails() {
               && <img key={ size } src={ imgPath } alt="Cup size" className="cups" />
             )) }
           </div>
+          <h4 className="capsuleDetailsIntensity">
+            { capsuleInfo.capsuleType === 'Original' ? (
+              `Intensidade: ${capsuleInfo.capsuleIntensity}/13`
+            ) : (
+              `Intensidade: ${capsuleInfo.capsuleIntensity}/11`
+            )}
+          </h4>
         </section>
       </main>
       <Footer />

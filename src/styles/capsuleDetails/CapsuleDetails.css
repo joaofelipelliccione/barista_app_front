@@ -1,5 +1,5 @@
 .capsuleDetailsMain {
-  background-color: var(--mediumCarmine);
+  background-color: var(--americanBronze);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -42,12 +42,25 @@
 }
 
 .capsuleDetailsContainer1-1 {
-  border: solid 2px grey;
   display: flex;
+  align-self: center;
   align-items: center;
+}
+
+.capsuleDetailsContainer1-1 h4 {
+  color: var(--bisque);
+  font-size: 1.5rem;
+  margin-top: 1rem;
 }
 
 .cups {
   width: 4rem;
   height: 4rem;
+}
+
+.capsuleDetailsIntensity {
+  color: var(--bisque);
+  align-self: center;
+  font-size: 1.5rem;
+  margin-top: 0.5rem;
 }
