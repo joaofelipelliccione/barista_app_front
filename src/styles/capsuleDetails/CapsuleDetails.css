@@ -36,5 +36,15 @@
 .capsuleDetailsContainer1 {
   background-color: var(--americanBronze);
   display: flex;
+  flex-direction: column;
+  align-items: center;
   width: 100%;
+}
+
+.capsuleDetailsContainer1-1 {
+  border: solid 2px grey;
+}
+
+.cups {
+  
 }
