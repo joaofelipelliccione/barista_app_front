@@ -43,8 +43,11 @@
 
 .capsuleDetailsContainer1-1 {
   border: solid 2px grey;
+  display: flex;
+  align-items: center;
 }
 
 .cups {
-  
+  width: 4rem;
+  height: 4rem;
 }
