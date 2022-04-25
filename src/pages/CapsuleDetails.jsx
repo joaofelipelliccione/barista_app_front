@@ -1,7 +1,9 @@
+/* eslint-disable react/jsx-max-depth */
 import React from 'react';
 import { useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
 import swal from 'sweetalert';
+import squaresMachine from '../sharedFunctions/squaresMachine';
 import Header from '../components/header/Header';
 import Footer from '../components/Footer';
 
@@ -33,6 +35,7 @@ function CapsuleDetails() {
     { size: 'cappuccino', imgPath: cappuccino, name: 'Cappuccino', ml: 180 },
     { size: 'dblCappuccino', imgPath: dblCappuccino, name: 'Double Cappuccino', ml: 360 },
   ];
+  const FIVE = 5;
 
   return (
     <div className="capsuleDetailsPage">
@@ -71,10 +74,11 @@ function CapsuleDetails() {
             )) }
           </div>
           <h4 className="capsuleDetails">
+            Intensidade:
             { capsuleInfo.capsuleType === 'Original' ? (
-              `Intensidade: ${capsuleInfo.capsuleIntensity}/13`
+              <span>{` ${capsuleInfo.capsuleIntensity}/13`}</span>
             ) : (
-              `Intensidade: ${capsuleInfo.capsuleIntensity}/11`
+              <span>{` ${capsuleInfo.capsuleIntensity}/11`}</span>
             )}
           </h4>
           <h4 className="capsuleDetails">
@@ -82,6 +86,34 @@ function CapsuleDetails() {
             {' '}
             <span>{capsuleInfo.capsuleAspects}</span>
           </h4>
+          <h4 className="capsuleDetails">
+            Notas Aromáticas:
+            {' '}
+            <span>{capsuleInfo.capsuleAromaticNotes}</span>
+          </h4>
+          <h4 className="capsuleDetails">
+            Origem:
+            {' '}
+            <span>{capsuleInfo.capsuleOrigin}</span>
+          </h4>
+          <div className="beanAspectsContainer">
+            <div>
+              <span>
+                {`Torra: ${squaresMachine(capsuleInfo.capsuleRoastingLevel, FIVE)}`}
+              </span>
+              <span>
+                {`Acidez: ${squaresMachine(capsuleInfo.capsuleAcidityLevel, FIVE)}`}
+              </span>
+            </div>
+            <div>
+              <span>
+                {`Amargor: ${squaresMachine(capsuleInfo.capsuleBitternessLevel, FIVE)}`}
+              </span>
+              <span>
+                {`Corpo: ${squaresMachine(capsuleInfo.capsuleRobustnessLevel, FIVE)}`}
+              </span>
+            </div>
+          </div>
         </section>
       </main>
       <Footer />
