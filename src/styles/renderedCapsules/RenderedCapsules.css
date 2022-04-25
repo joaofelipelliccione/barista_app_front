@@ -15,7 +15,6 @@
 }
 
 .capsulesCardsContainer {
-  /* border: solid 2px white; */
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -35,6 +34,7 @@
 
 .eachCapsuleCard {
   background-color: var(--fawn);
+  box-shadow: rgba(255, 255, 255, 0.24) 0px 3px 8px;
   border-radius: 5px 17px;
   display: flex;
   align-items: center;
