@@ -39,7 +39,6 @@ function CapsuleDetails() {
 
   return (
     <div className="capsuleDetailsPage">
-      {console.log(capsuleInfo)}
       <Header />
       <main className="capsuleDetailsMain">
         <img
