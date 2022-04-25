@@ -5,6 +5,7 @@ import { useParams } from 'react-router-dom';
 import swal from 'sweetalert';
 import squaresMachine from '../sharedFunctions/squaresMachine';
 import Header from '../components/header/Header';
+import Caption from '../components/Caption';
 import Footer from '../components/Footer';
 
 import ristretto25 from '../images/cupSizes/img-ristretto25.svg';
@@ -115,7 +116,8 @@ function CapsuleDetails() {
           </div>
         </section>
       </main>
-      <Footer typeOfFooter="fixedFooter" />
+      <Caption />
+      <Footer typeOfFooter="regularFooter" />
     </div>
   );
 }
