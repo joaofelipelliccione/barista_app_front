@@ -1,6 +1,7 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
+import swal from 'sweetalert';
 import Header from '../components/header/Header';
 import Footer from '../components/Footer';
 
@@ -15,21 +16,22 @@ import cappuccino from '../images/cupSizes/img-cappuccino.svg';
 import dblCappuccino from '../images/cupSizes/img-dbl_cappuccino.svg';
 
 import '../styles/capsuleDetails/CapsuleDetails.css';
+import '../styles/Alerts.css';
 
 function CapsuleDetails() {
   const { id } = useParams();
   const allCapsulesArr = useSelector((state) => state.capsules).allCapsules;
   const capsuleInfo = allCapsulesArr.find(({ capsuleId }) => capsuleId === Number(id));
   const cupSizesArray = [
-    { size: 'ristretto25', imgPath: ristretto25 },
-    { size: 'expresso40', imgPath: expresso40 },
-    { size: 'dblExpresso80', imgPath: dblExpresso80 },
-    { size: 'lungo110', imgPath: lungo110 },
-    { size: 'granLungo150', imgPath: granLungo150 },
-    { size: 'coffe230', imgPath: coffe230 },
-    { size: 'carafe535', imgPath: carafe535 },
-    { size: 'cappuccino', imgPath: cappuccino },
-    { size: 'dblCappuccino', imgPath: dblCappuccino },
+    { size: 'ristretto25', imgPath: ristretto25, name: 'Ristretto', ml: 25 },
+    { size: 'expresso40', imgPath: expresso40, name: 'Expresso', ml: 40 },
+    { size: 'dblExpresso80', imgPath: dblExpresso80, name: 'Double Expresso', ml: 80 },
+    { size: 'lungo110', imgPath: lungo110, name: 'Lungo', ml: 110 },
+    { size: 'granLungo150', imgPath: granLungo150, name: 'Gran Lungo', ml: 150 },
+    { size: 'coffe230', imgPath: coffe230, name: 'Coffe', ml: 230 },
+    { size: 'carafe535', imgPath: carafe535, name: 'Carafe', ml: 535 },
+    { size: 'cappuccino', imgPath: cappuccino, name: 'Cappuccino', ml: 180 },
+    { size: 'dblCappuccino', imgPath: dblCappuccino, name: 'Double Cappuccino', ml: 360 },
   ];
 
   return (
@@ -52,9 +54,20 @@ function CapsuleDetails() {
         <section className="capsuleDetailsContainer1">
           <div className="capsuleDetailsContainer1-1">
             <h4>Medidas: </h4>
-            { cupSizesArray.map(({ size, imgPath }) => (
+            { cupSizesArray.map(({ size, imgPath, name, ml }) => (
               capsuleInfo[size]
-              && <img key={ size } src={ imgPath } alt="Cup size" className="cups" />
+              && (
+                <button
+                  className="cups"
+                  type="button"
+                  key={ size }
+                  onClick={ () => swal(name, `Tamanho da xícara: ${ml} ml`, 'info') }
+                >
+                  <img
+                    src={ imgPath }
+                    alt="Cup size"
+                  />
+                </button>)
             )) }
           </div>
           <h4 className="capsuleDetailsIntensity">

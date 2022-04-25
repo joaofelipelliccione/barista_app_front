@@ -54,6 +54,12 @@
 }
 
 .cups {
+  background-color: var(--americanBronze);
+  border: none;
+  outline: none;
+}
+
+.cups img {
   width: 4rem;
   height: 4rem;
 }

@@ -1,0 +1,43 @@
+.swal-overlay {
+  background-color: #d7a86e8f;
+}
+
+.swal-modal {
+  background-image: linear-gradient(var(--fawn), var(--mediumCarmine), var(--brown));
+  border: 3px solid var(--antiqueWhite);
+  border-radius: 1rem;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  width: 30rem;
+  height: 32rem;
+}
+
+.swal-icon {
+  border: solid 3px var(--philippineBronze);
+}
+
+.swal-icon::after, .swal-icon::before {
+  background-color: var(--philippineBronze);
+}
+
+.swal-title {
+  color: var(--antiqueWhite);
+  font-size: 2.1rem;
+  text-align: center;
+}
+
+.swal-text {
+  color: var(--antiqueWhite);
+  font-size: 1.8rem;
+  text-align: center;
+  font-weight: 700;
+}
+
+.swal-button {
+  background-color: var(--fawn);
+  color: var(--americanBronze);
+  border: none;
+  border-radius: 15px 5px;
+  font-size: 1.3rem;
+  padding: 7px 19px;
+  transition-duration: 0.3s;
+}
