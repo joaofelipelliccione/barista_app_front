@@ -61,7 +61,7 @@ function Home() {
       <RenderedCapsules
         capsulesToRender={ capsulesToRender }
       />
-      <Footer />
+      <Footer typeOfFooter="regularFooter" />
     </div>
   );
 }

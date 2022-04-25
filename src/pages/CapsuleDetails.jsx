@@ -115,7 +115,7 @@ function CapsuleDetails() {
           </div>
         </section>
       </main>
-      <Footer />
+      <Footer typeOfFooter="fixedFooter" />
     </div>
   );
 }

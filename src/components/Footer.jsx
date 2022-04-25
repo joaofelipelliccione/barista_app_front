@@ -1,9 +1,10 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import '../styles/Footer.css';
 
-function Footer() {
+function Footer({ typeOfFooter }) {
   return (
-    <footer className="footer">
+    <footer className={ typeOfFooter }>
       <span>
         {'Developed by '}
         <a
@@ -18,5 +19,9 @@ function Footer() {
     </footer>
   );
 }
+
+Footer.propTypes = {
+  typeOfFooter: PropTypes.string.isRequired,
+};
 
 export default Footer;

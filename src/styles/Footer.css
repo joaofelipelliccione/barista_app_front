@@ -1,4 +1,4 @@
-.footer {
+.regularFooter {
   background-color: var(--mediumCarmine);
   display: flex;
   flex-direction: column;
@@ -6,19 +6,29 @@
   align-content: center;
   width: 100%;
   padding: 2rem 0;
-  /* position: fixed;
-  left: 0;
-  bottom: 0; */
 }
 
-.footer span {
+.fixedFooter {
+  background-color: var(--mediumCarmine);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  align-content: center;
+  width: 100%;
+  padding: 2rem 0;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+}
+
+.regularFooter span, .fixedFooter span {
   color: var(--antiqueWhite);
   font-size: 1rem;
   font-weight: 700;
   text-align: center;
 }
 
-.footer span a {
+.regularFooter span a, .fixedFooter span a {
   color: var(--americanBronze);
   font-size: 1rem;
   font-weight: 700;
