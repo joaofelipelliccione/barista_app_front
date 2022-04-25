@@ -64,9 +64,13 @@
   height: 4rem;
 }
 
-.capsuleDetailsIntensity {
+.capsuleDetails {
   color: var(--bisque);
   align-self: center;
   font-size: 1.5rem;
   margin-top: 0.5rem;
+}
+
+.capsuleDetails span {
+  color: ghostwhite;
 }

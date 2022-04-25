@@ -70,12 +70,17 @@ function CapsuleDetails() {
                 </button>)
             )) }
           </div>
-          <h4 className="capsuleDetailsIntensity">
+          <h4 className="capsuleDetails">
             { capsuleInfo.capsuleType === 'Original' ? (
               `Intensidade: ${capsuleInfo.capsuleIntensity}/13`
             ) : (
               `Intensidade: ${capsuleInfo.capsuleIntensity}/11`
             )}
+          </h4>
+          <h4 className="capsuleDetails">
+            Características:
+            {' '}
+            <span>{capsuleInfo.capsuleAspects}</span>
           </h4>
         </section>
       </main>
