@@ -5,11 +5,23 @@ import Select from 'react-select';
 import { BsSearch } from 'react-icons/bs';
 import '../../styles/searchMethods/SearchBar.css';
 
-function SearchBar({ searchedCapsule, setSearchedCapsule,
-  onClickSearchBtn, setCapsulesToRender }) {
+function SearchBar({ setIsFetching, setCapsulesToRender }) {
+  const [searchedCapsule, setSearchedCapsule] = React.useState('');
+
   const allCapsulesArr = useSelector((state) => state.capsules).allCapsules;
   const allCapsulesNamesArr = allCapsulesArr.map(({ capsuleName }) => capsuleName);
   const reactSelectArr = allCapsulesNamesArr.map((opt) => ({ label: opt, value: opt }));
+
+  const onClickSearchBtn = async () => {
+    const SEARCH_ONE_CAPSULE_ENDPOINT = `https://barista-app-back.herokuapp.com/capsules/search?capsuleName=${searchedCapsule}`;
+
+    setIsFetching(true);
+    const res = await fetch(SEARCH_ONE_CAPSULE_ENDPOINT);
+    const data = await res.json();
+
+    setCapsulesToRender(data);
+    setIsFetching(false);
+  };
 
   return (
     <section className="searchBarContainer">
@@ -37,9 +49,7 @@ function SearchBar({ searchedCapsule, setSearchedCapsule,
 }
 
 SearchBar.propTypes = {
-  searchedCapsule: PropTypes.string.isRequired,
-  setSearchedCapsule: PropTypes.func.isRequired,
-  onClickSearchBtn: PropTypes.func.isRequired,
+  setIsFetching: PropTypes.func.isRequired,
   setCapsulesToRender: PropTypes.func.isRequired,
 };
 

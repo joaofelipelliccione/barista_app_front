@@ -6,8 +6,7 @@ import FiltersBar from './filtersBar/FiltersBar';
 import '../../styles/searchMethods/SearchMethods.css';
 
 function SearchMethods({ searchMethod, setSearchMethod,
-  searchedCapsule, setSearchedCapsule, onClickSearchBtn,
-  setCapsulesToRender }) {
+  setIsFetching, setCapsulesToRender }) {
   return (
     <div className="searchMethodsContainer">
       <Radios
@@ -15,9 +14,7 @@ function SearchMethods({ searchMethod, setSearchMethod,
       />
       { searchMethod === 'name' ? (
         <SearchBar
-          searchedCapsule={ searchedCapsule }
-          setSearchedCapsule={ setSearchedCapsule }
-          onClickSearchBtn={ onClickSearchBtn }
+          setIsFetching={ setIsFetching }
           setCapsulesToRender={ setCapsulesToRender }
         />
       ) : (
@@ -30,9 +27,7 @@ function SearchMethods({ searchMethod, setSearchMethod,
 SearchMethods.propTypes = {
   searchMethod: PropTypes.string.isRequired,
   setSearchMethod: PropTypes.func.isRequired,
-  searchedCapsule: PropTypes.string.isRequired,
-  setSearchedCapsule: PropTypes.func.isRequired,
-  onClickSearchBtn: PropTypes.func.isRequired,
+  setIsFetching: PropTypes.func.isRequired,
   setCapsulesToRender: PropTypes.func.isRequired,
 };
 

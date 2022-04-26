@@ -13,7 +13,6 @@ function Home() {
   const [isFetching, setIsFetching] = React.useState(false);
   const [capsulesToRender, setCapsulesToRender] = React.useState([]);
   const [searchMethod, setSearchMethod] = React.useState('name');
-  const [searchedCapsule, setSearchedCapsule] = React.useState('');
 
   const dispatch = useDispatch();
 
@@ -32,17 +31,6 @@ function Home() {
       });
   }, []);
 
-  const onClickSearchBtn = async () => {
-    const SEARCH_ONE_CAPSULE_ENDPOINT = `https://barista-app-back.herokuapp.com/capsules/search?capsuleName=${searchedCapsule}`;
-
-    setIsFetching(true);
-    const res = await fetch(SEARCH_ONE_CAPSULE_ENDPOINT);
-    const data = await res.json();
-
-    setCapsulesToRender(data);
-    setIsFetching(false);
-  };
-
   return (
     <div className="homePage">
       <Header
@@ -53,9 +41,7 @@ function Home() {
         <SearchMethods
           searchMethod={ searchMethod }
           setSearchMethod={ setSearchMethod }
-          searchedCapsule={ searchedCapsule }
-          setSearchedCapsule={ setSearchedCapsule }
-          onClickSearchBtn={ onClickSearchBtn }
+          setIsFetching={ setIsFetching }
           setCapsulesToRender={ setCapsulesToRender }
         />
       </main>
