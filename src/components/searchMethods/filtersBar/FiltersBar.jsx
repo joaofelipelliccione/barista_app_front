@@ -6,6 +6,7 @@ import IntensityFilter from './IntensityFilter';
 import RoastingFilter from './RoastingFilter';
 import BitternessFilter from './BitternessFilter';
 import AcidityFilter from './AcidityFilter';
+import RobustnessFilter from './RobustnessFilter';
 import '../../../styles/searchMethods/FiltersBar.css';
 
 function FiltersBar({ setCapsulesToRender }) {
@@ -23,6 +24,9 @@ function FiltersBar({ setCapsulesToRender }) {
 
   const [acidityMathSignal, setAcidityMathSignal] = React.useState('?');
   const [chosenAcidity, setChosenAcidity] = React.useState(1);
+
+  const [robustnessMathSignal, setRobustnessMathSignal] = React.useState('?');
+  const [chosenRobustness, setChosenRobustness] = React.useState(1);
 
   const intensityFilterLogic = (capsulesToRenderArray) => {
     switch (intensityMathSignal) {
@@ -88,6 +92,22 @@ function FiltersBar({ setCapsulesToRender }) {
     }
   };
 
+  const robustnessFilterLogic = (capsulesToRenderArray) => {
+    switch (robustnessMathSignal) {
+    case '≤':
+      return capsulesToRenderArray
+        .filter(({ capsuleRobustnessLevel }) => capsuleRobustnessLevel <= Number(chosenRobustness));
+    case '=':
+      return capsulesToRenderArray
+        .filter(({ capsuleRobustnessLevel }) => capsuleRobustnessLevel === Number(chosenRobustness));
+    case '≥':
+      return capsulesToRenderArray
+        .filter(({ capsuleRobustnessLevel }) => capsuleRobustnessLevel >= Number(chosenRobustness));
+    default:
+      return capsulesToRenderArray;
+    }
+  };
+
   const onFilter = () => {
     let capsulesToRenderArray = allCapsulesArr;
 
@@ -102,6 +122,9 @@ function FiltersBar({ setCapsulesToRender }) {
     }
     if (acidityMathSignal !== '?') {
       capsulesToRenderArray = acidityFilterLogic(capsulesToRenderArray);
+    }
+    if (robustnessMathSignal !== '?') {
+      capsulesToRenderArray = robustnessFilterLogic(capsulesToRenderArray);
     }
 
     setCapsulesToRender(capsulesToRenderArray);
@@ -118,6 +141,8 @@ function FiltersBar({ setCapsulesToRender }) {
     setChosenBitterness(1);
     setAcidityMathSignal('?');
     setChosenAcidity(1);
+    setRobustnessMathSignal('?');
+    setChosenRobustness(1);
     setIsFilterActive(false);
   };
 
@@ -147,7 +172,12 @@ function FiltersBar({ setCapsulesToRender }) {
         acidityValue={ chosenAcidity }
         setAcidityValue={ setChosenAcidity }
       />
-      <p>Filtro 4</p>
+      <RobustnessFilter
+        robustnessMathSignal={ robustnessMathSignal }
+        setRobustnessMathSignal={ setRobustnessMathSignal }
+        robustnessValue={ chosenRobustness }
+        setRobustnessValue={ setChosenRobustness }
+      />
       <button
         type="button"
         onClick={ isFilterActive ? onCleanFilter : onFilter }
@@ -156,6 +186,7 @@ function FiltersBar({ setCapsulesToRender }) {
           && roastingMathSignal === '?'
           && bitternessMathSignal === '?'
           && acidityMathSignal === '?'
+          && robustnessMathSignal === '?'
         }
       >
         { isFilterActive ? 'Limpar' : 'Filtrar'}
