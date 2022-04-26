@@ -1,6 +1,6 @@
 import React from 'react';
 // import PropTypes from 'prop-types';
-import '../../styles/searchMethods/FiltersBar.css';
+import '../../../styles/searchMethods/FiltersBar.css';
 
 function FiltersBar() {
   return (

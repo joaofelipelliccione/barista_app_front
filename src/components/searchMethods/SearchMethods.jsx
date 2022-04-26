@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Radios from './Radios';
 import SearchBar from './SearchBar';
-import FiltersBar from './FiltersBar';
+import FiltersBar from './filtersBar/FiltersBar';
 import '../../styles/searchMethods/SearchMethods.css';
 
 function SearchMethods({ searchMethod, setSearchMethod,
