@@ -47,6 +47,7 @@ function Home() {
       </main>
       <RenderedCapsules
         capsulesToRender={ capsulesToRender }
+        isFetching={ isFetching }
       />
       <Footer typeOfFooter="regularFooter" />
     </div>

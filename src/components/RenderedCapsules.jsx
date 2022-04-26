@@ -4,16 +4,18 @@ import { Link } from 'react-router-dom';
 import squaresMachine from '../sharedFunctions/squaresMachine';
 import '../styles/RenderedCapsules.css';
 
-function RenderedCapsules({ capsulesToRender }) {
+function RenderedCapsules({ isFetching, capsulesToRender }) {
   const FIVE = 5;
 
   return (
     <section className="renderedCapsulesContainer">
-      <h1>
-        { capsulesToRender.length !== 0 ? (
-          'Cápsulas (Original & Vertuo)'
-        ) : ('Nenhuma Cápsula Encontrada') }
-      </h1>
+      { isFetching ? (<h1>Buscando...</h1>) : (
+        <h1>
+          { capsulesToRender.length !== 0 ? (
+            'Cápsulas (Original & Vertuo)'
+          ) : ('Nenhuma Cápsula Encontrada') }
+        </h1>
+      ) }
       <article className="capsulesCardsContainer">
         {capsulesToRender.map((capsule) => (
           <Link
@@ -62,6 +64,7 @@ function RenderedCapsules({ capsulesToRender }) {
 }
 
 RenderedCapsules.propTypes = {
+  isFetching: PropTypes.bool.isRequired,
   capsulesToRender: PropTypes.arrayOf(PropTypes.shape({
     capsuleId: PropTypes.number,
     capsuleType: PropTypes.string,
