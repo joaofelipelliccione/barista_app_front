@@ -3,7 +3,7 @@ import { useDispatch } from 'react-redux';
 import capsulesAC from '../redux/actions/capsulesAC';
 import Header from '../components/header/Header';
 import SearchMethods from '../components/searchMethods/SearchMethods';
-import RenderedCapsules from '../components/renderedCapsules/RenderedCapsules';
+import RenderedCapsules from '../components/RenderedCapsules';
 import Footer from '../components/Footer';
 import '../styles/Home.css';
 
@@ -27,6 +27,7 @@ function Home() {
         setCapsulesToRender(data);
         dispatch(capsulesAC(data));
         localStorage.setItem('allCapsules', JSON.stringify(data));
+        console.log(data);
         setIsFetching(false);
       });
   }, []);

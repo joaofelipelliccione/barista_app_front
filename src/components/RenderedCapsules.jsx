@@ -1,8 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
-import squaresMachine from '../../sharedFunctions/squaresMachine';
-import '../../styles/renderedCapsules/RenderedCapsules.css';
+import squaresMachine from '../sharedFunctions/squaresMachine';
+import '../styles/RenderedCapsules.css';
 
 function RenderedCapsules({ capsulesToRender }) {
   const FIVE = 5;

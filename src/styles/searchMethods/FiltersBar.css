@@ -1,0 +1,18 @@
+.filtersBarContainer {
+  border: solid 2px white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  height: 10rem;
+  overflow-y: scroll;
+  padding: 0.8rem 0;
+}
+
+.filtersBarContainer::-webkit-scrollbar {
+  width: 0.2rem;
+}
+
+.filtersBarContainer::-webkit-scrollbar-thumb {
+  background: var(--bisque);
+}
