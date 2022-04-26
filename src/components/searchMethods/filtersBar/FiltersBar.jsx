@@ -39,6 +39,8 @@ function FiltersBar({ setCapsulesToRender }) {
 
   const onCleanFilter = () => {
     setCapsulesToRender(allCapsulesArr);
+    setIntensityMathSignal('?');
+    setChosenIntensity(1);
     setIsFilterActive(false);
   };
 
