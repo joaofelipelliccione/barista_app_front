@@ -1,11 +1,20 @@
 import React from 'react';
 // import PropTypes from 'prop-types';
+import IntensityFilter from './IntensityFilter';
 import '../../../styles/searchMethods/FiltersBar.css';
 
 function FiltersBar() {
+  const [intensityMathSignal, setIntensityMathSignal] = React.useState('selecionar');
+  const [chosenIntensity, setChosenIntensity] = React.useState(1);
+
   return (
     <section className="filtersBarContainer">
-      <p>Filtro 1</p>
+      <IntensityFilter
+        intensityMathSignal={ intensityMathSignal }
+        setIntensityMathSignal={ setIntensityMathSignal }
+        intensityValue={ chosenIntensity }
+        setIntensityValue={ setChosenIntensity }
+      />
       <p>Filtro 2</p>
       <p>Filtro 3</p>
       <p>Filtro 4</p>
