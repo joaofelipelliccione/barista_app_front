@@ -4,7 +4,7 @@ import IntensityFilter from './IntensityFilter';
 import '../../../styles/searchMethods/FiltersBar.css';
 
 function FiltersBar() {
-  const [intensityMathSignal, setIntensityMathSignal] = React.useState('selecionar');
+  const [intensityMathSignal, setIntensityMathSignal] = React.useState('?');
   const [chosenIntensity, setChosenIntensity] = React.useState(1);
 
   return (
