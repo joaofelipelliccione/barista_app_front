@@ -9,7 +9,11 @@ function RenderedCapsules({ capsulesToRender }) {
 
   return (
     <section className="renderedCapsulesContainer">
-      <h1>Cápsulas</h1>
+      <h1>
+        { capsulesToRender.length !== 0 ? (
+          'Cápsulas (Original & Vertuo)'
+        ) : ('Nenhuma Cápsula Encontrada') }
+      </h1>
       <article className="capsulesCardsContainer">
         {capsulesToRender.map((capsule) => (
           <Link
