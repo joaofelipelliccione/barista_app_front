@@ -18,7 +18,9 @@ function SearchMethods({ searchMethod, setSearchMethod,
           setCapsulesToRender={ setCapsulesToRender }
         />
       ) : (
-        <FiltersBar />
+        <FiltersBar
+          setCapsulesToRender={ setCapsulesToRender }
+        />
       ) }
     </div>
   );
