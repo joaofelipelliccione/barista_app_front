@@ -4,7 +4,7 @@
   flex-direction: column;
   align-items: center;
   width: 29rem;
-  height: 10rem;
+  height: 12rem;
   overflow-y: scroll;
 }
 
@@ -84,4 +84,39 @@ output {
   font-size: 1.15rem;
   font-weight: 700;
   width: 2.5rem;
+}
+
+.filterBtn {
+  background-color: var(--bisque);
+  border: none;
+  border-radius: 0.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 5rem;
+  margin-top: 1.3rem;
+  padding: 0.7rem 0.4rem;
+}
+
+.filterBtn svg, .clearFilterBtn svg {
+  color: var(--rootBeer);
+  font-size: 1.5rem;
+}
+
+.filterBtn:disabled {
+  background-color: var(--btnDisabled);
+  border: none;
+  opacity: 0.6;
+}
+
+.clearFilterBtn {
+  background-color: var(--attentionBtn);
+  border: none;
+  border-radius: 0.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 5rem;
+  margin-top: 1.3rem;
+  padding: 0.7rem 0.4rem;
 }

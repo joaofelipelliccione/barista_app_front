@@ -7,6 +7,8 @@ import RoastingFilter from './RoastingFilter';
 import BitternessFilter from './BitternessFilter';
 import AcidityFilter from './AcidityFilter';
 import RobustnessFilter from './RobustnessFilter';
+import { RiFilterLine } from 'react-icons/ri';
+import { RiFilterOffLine } from 'react-icons/ri';
 import '../../../styles/searchMethods/FiltersBar.css';
 
 function FiltersBar({ setCapsulesToRender }) {
@@ -180,6 +182,7 @@ function FiltersBar({ setCapsulesToRender }) {
       />
       <button
         type="button"
+        className={ isFilterActive ? "clearFilterBtn" : "filterBtn" }
         onClick={ isFilterActive ? onCleanFilter : onFilter }
         disabled={
           intensityMathSignal === '?'
@@ -189,7 +192,7 @@ function FiltersBar({ setCapsulesToRender }) {
           && robustnessMathSignal === '?'
         }
       >
-        { isFilterActive ? 'Limpar' : 'Filtrar'}
+        { isFilterActive ? <RiFilterOffLine /> : <RiFilterLine />}
       </button>
     </section>
   );
