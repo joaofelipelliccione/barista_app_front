@@ -32,6 +32,13 @@
   background: var(--bisque);
 }
 
+.capsulesNotFound {
+  border-radius: 1.5rem;
+  width: 30rem;
+  align-self: center;
+  margin-top: 1.5rem;
+}
+
 .eachCapsuleCard {
   background-color: var(--fawn);
   box-shadow: rgba(255, 255, 255, 0.24) 0px 3px 8px;

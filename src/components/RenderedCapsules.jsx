@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import squaresMachine from '../sharedFunctions/squaresMachine';
+import spilledCoffe from '../images/spilled-coffe.jpg';
 import '../styles/RenderedCapsules.css';
 
 function RenderedCapsules({ isFetching, capsulesToRender }) {
@@ -16,49 +17,58 @@ function RenderedCapsules({ isFetching, capsulesToRender }) {
           ) : ('Nenhuma Cápsula Encontrada') }
         </h1>
       ) }
-      <article className="capsulesCardsContainer">
-        {capsulesToRender.map((capsule) => (
-          <Link
-            to={ `/capsule/${capsule.capsuleId}` }
-            key={ capsule.capsuleId }
-            className="eachCapsuleCard"
-          >
-            <img
-              src={ capsule.capsuleImgSrc }
-              alt="Imagem da capsula"
-            />
-            <div className="eachCapsuleCardContainer1">
-              <h2>{ capsule.capsuleName }</h2>
-              <h3>{ capsule.capsuleLine }</h3>
-              <h4>
-                { capsule.capsuleType === 'Original' ? (
-                  `intensidade: ${capsule.capsuleIntensity}/13`
-                ) : (
-                  `intensidade: ${capsule.capsuleIntensity}/11`
-                )}
-              </h4>
-              <div className="eachCapsuleCardContainer1-1">
-                <div className="eachCapsuleCardContainer1-1-1">
-                  <span>
-                    {`Torra: ${squaresMachine(capsule.capsuleRoastingLevel, FIVE)}`}
-                  </span>
-                  <span>
-                    {`Acidez: ${squaresMachine(capsule.capsuleAcidityLevel, FIVE)}`}
-                  </span>
-                </div>
-                <div className="eachCapsuleCardContainer1-1-2">
-                  <span>
-                    {`Amargor: ${squaresMachine(capsule.capsuleBitternessLevel, FIVE)}`}
-                  </span>
-                  <span>
-                    {`Corpo: ${squaresMachine(capsule.capsuleRobustnessLevel, FIVE)}`}
-                  </span>
+      { capsulesToRender.length !== 0 ? (
+        <article className="capsulesCardsContainer">
+          {capsulesToRender.map((capsule) => (
+            <Link
+              to={ `/capsule/${capsule.capsuleId}` }
+              key={ capsule.capsuleId }
+              className="eachCapsuleCard"
+            >
+              <img
+                src={ capsule.capsuleImgSrc }
+                alt="Imagem da capsula"
+              />
+              <div className="eachCapsuleCardContainer1">
+                <h2>{ capsule.capsuleName }</h2>
+                <h3>{ capsule.capsuleLine }</h3>
+                <h4>
+                  { capsule.capsuleType === 'Original' ? (
+                    `intensidade: ${capsule.capsuleIntensity}/13`
+                  ) : (
+                    `intensidade: ${capsule.capsuleIntensity}/11`
+                  )}
+                </h4>
+                <div className="eachCapsuleCardContainer1-1">
+                  <div className="eachCapsuleCardContainer1-1-1">
+                    <span>
+                      {`Torra: ${squaresMachine(capsule.capsuleRoastingLevel, FIVE)}`}
+                    </span>
+                    <span>
+                      {`Acidez: ${squaresMachine(capsule.capsuleAcidityLevel, FIVE)}`}
+                    </span>
+                  </div>
+                  <div className="eachCapsuleCardContainer1-1-2">
+                    <span>
+                      {`Amargor: ${squaresMachine(capsule.capsuleBitternessLevel, FIVE)}`}
+                    </span>
+                    <span>
+                      {`Corpo: ${squaresMachine(capsule.capsuleRobustnessLevel, FIVE)}`}
+                    </span>
+                  </div>
                 </div>
               </div>
-            </div>
-          </Link>
-        ))}
-      </article>
+            </Link>
+          ))}
+        </article>
+      ) : (
+        <article className="capsulesCardsContainer">
+          <img
+            className="capsulesNotFound"
+            src={ spilledCoffe }
+            alt="Capsules Not Found"
+          />
+        </article>) }
     </section>
   );
 }
