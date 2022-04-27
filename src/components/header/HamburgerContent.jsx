@@ -25,7 +25,7 @@ function HamburgerContent({ isHambMenuOpen, setIsHambMenuOpen }) {
 
   return (
     <div
-      className="hambContentContainer slide-bottom"
+      className="hambContentContainer"
       ref={ dropdownRef }
     >
       <div className="hambContentSubContainer1">

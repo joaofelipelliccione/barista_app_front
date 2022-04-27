@@ -7,6 +7,15 @@
   }
 }
 
+@keyframes slideInFromLeft {
+  0% {
+    transform: translateX(-10rem);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
 .header {
   background-color: var(--mediumCarmine);
   display: flex;
@@ -133,37 +142,17 @@
   margin: 0.5rem 0 1.5rem 0;
 }
 
-.slide-bottom {
-	-webkit-animation: slide-bottom 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
-  animation: slide-bottom 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
-}
-
-@-webkit-keyframes slide-bottom {
-  0% {
-    -webkit-transform: translateY(0);
-    transform: translateY(0);
-  }
-  100% {
-    -webkit-transform: translateY(6%);
-    transform: translateY(6%);
-  }
-}
-
-@keyframes slide-bottom {
-  0% {
-    -webkit-transform: translateY(0);
-    transform: translateY(0);
-  }
-  100% {
-    -webkit-transform: translateY(6%);
-    transform: translateY(6%);
-  }
-}
-
 .hambContentSubContainer1 {
   display: flex;
   justify-content: space-evenly;
   width: 100%;
+  margin-top: 1rem;
+
+  animation-duration: 1s; /* the duration of the animation */
+  animation-timing-function: ease-out; /* how the animation will behave */
+  animation-delay: 0s; /* how long to delay the animation from starting */
+  animation-iteration-count: 1; /* how many times the animation will play */
+  animation-name: slideInFromLeft; /* the name of the animation we defined above */
 }
 
 .capsulesLinks {
