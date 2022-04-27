@@ -92,6 +92,15 @@ function FiltersBar({ setCapsulesToRender }) {
     setRobustnessMathSignal('?');
     setChosenRobustness(1);
     setIsFilterActive(false);
+    setRistretto(false);
+    setExpresso(false);
+    setDblExpresso(false);
+    setLungo(false);
+    setGranLungo(false);
+    setCoffe(false);
+    setCarafe(false);
+    setCappuccino(false);
+    setDblCappuccino(false);
   };
 
   return (
@@ -156,6 +165,15 @@ function FiltersBar({ setCapsulesToRender }) {
           && bitternessMathSignal === '?'
           && acidityMathSignal === '?'
           && robustnessMathSignal === '?'
+          && !ristretto
+          && !expresso
+          && !dblExpresso
+          && !lungo
+          && !granLungo
+          && !coffe
+          && !carafe
+          && !cappuccino
+          && !dblCappuccino
         }
       >
         { isFilterActive ? <RiFilterOffLine /> : <RiFilterLine />}
