@@ -74,6 +74,33 @@ function FiltersBar({ setCapsulesToRender }) {
     if (robustnessMathSignal !== '?') {
       capsToRenderArr = capsMainAttributesFilterLogic(capsToRenderArr, 'capsuleRobustnessLevel', robustnessMathSignal, chosenRobustness);
     }
+    if (ristretto) {
+      capsToRenderArr = capsToRenderArr.filter(({ ristretto25 }) => ristretto25 === true);
+    }
+    if (expresso) {
+      capsToRenderArr = capsToRenderArr.filter(({ expresso40 }) => expresso40 === true);
+    }
+    if (dblExpresso) {
+      capsToRenderArr = capsToRenderArr.filter(({ dblExpresso80 }) => dblExpresso80 === true);
+    }
+    if (lungo) {
+      capsToRenderArr = capsToRenderArr.filter(({ lungo110 }) => lungo110 === true);
+    }
+    if (granLungo) {
+      capsToRenderArr = capsToRenderArr.filter(({ granLungo150 }) => granLungo150 === true);
+    }
+    if (coffe) {
+      capsToRenderArr = capsToRenderArr.filter(({ coffe230 }) => coffe230 === true);
+    }
+    if (carafe) {
+      capsToRenderArr = capsToRenderArr.filter(({ carafe535 }) => carafe535 === true);
+    }
+    if (cappuccino) {
+      capsToRenderArr = capsToRenderArr.filter(({ cappuccino }) => cappuccino === true);
+    }
+    if (dblCappuccino) {
+      capsToRenderArr = capsToRenderArr.filter(({ dblCappuccino }) => dblCappuccino === true);
+    }
 
     setCapsulesToRender(capsToRenderArr);
     setIsFilterActive(true);
