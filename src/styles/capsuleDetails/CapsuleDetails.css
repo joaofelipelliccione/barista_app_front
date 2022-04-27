@@ -69,6 +69,12 @@
 .cups img {
   width: 4rem;
   height: 4rem;
+
+  animation-duration: 1s; /* the duration of the animation */
+  animation-timing-function: ease-out; /* how the animation will behave */
+  animation-delay: 0s; /* how long to delay the animation from starting */
+  animation-iteration-count: 1; /* how many times the animation will play */
+  animation-name: spin; /* the name of the animation we defined above */
 }
 
 .capsuleDetails {
