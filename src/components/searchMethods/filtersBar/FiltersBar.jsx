@@ -8,6 +8,7 @@ import RoastingFilter from './RoastingFilter';
 import BitternessFilter from './BitternessFilter';
 import AcidityFilter from './AcidityFilter';
 import RobustnessFilter from './RobustnessFilter';
+import CupSizesFilter from './CupSizesFilter';
 import '../../../styles/searchMethods/FiltersBar.css';
 
 function FiltersBar({ setCapsulesToRender }) {
@@ -28,6 +29,16 @@ function FiltersBar({ setCapsulesToRender }) {
 
   const [robustnessMathSignal, setRobustnessMathSignal] = React.useState('?');
   const [chosenRobustness, setChosenRobustness] = React.useState(1);
+
+  const [ristretto, setRistretto] = React.useState(false);
+  const [expresso, setExpresso] = React.useState(false);
+  const [dblExpresso, setDblExpresso] = React.useState(false);
+  const [lungo, setLungo] = React.useState(false);
+  const [granLungo, setGranLungo] = React.useState(false);
+  const [coffe, setCoffe] = React.useState(false);
+  const [carafe, setCarafe] = React.useState(false);
+  const [cappuccino, setCappuccino] = React.useState(false);
+  const [dblCappuccino, setDblCappuccino] = React.useState(false);
 
   const capsMainAttributesFilterLogic = (capsToRenderArray, attribute, mathSignal, chosenValue) => {
     switch (mathSignal) {
@@ -114,6 +125,26 @@ function FiltersBar({ setCapsulesToRender }) {
         setRobustnessMathSignal={ setRobustnessMathSignal }
         robustnessValue={ chosenRobustness }
         setRobustnessValue={ setChosenRobustness }
+      />
+      <CupSizesFilter
+        ristretto={ ristretto }
+        setRistretto={ setRistretto }
+        expresso={ expresso }
+        setExpresso={ setExpresso }
+        dblExpresso={ dblExpresso }
+        setDblExpresso={ setDblExpresso }
+        lungo={ lungo }
+        setLungo={ setLungo }
+        granLungo={ granLungo }
+        setGranLungo={ setGranLungo }
+        coffe={ coffe }
+        setCoffe={ setCoffe }
+        carafe={ carafe }
+        setCarafe={ setCarafe }
+        cappuccino={ cappuccino }
+        setCappuccino={ setCappuccino }
+        dblCappuccino={ dblCappuccino }
+        setDblCappuccino={ setDblCappuccino }
       />
       <button
         type="button"

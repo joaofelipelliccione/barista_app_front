@@ -86,6 +86,62 @@ output {
   width: 2.5rem;
 }
 
+.cupsSizesFilterContainer {
+  border-top: 2px dotted var(--philippineBronze);
+  border-bottom: 2px dotted var(--philippineBronze);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 26rem;
+  height: 20rem;
+  margin-top: 0.5rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+
+.cupsSizesFilterScrollWrapper {
+  display: flex;
+  width: 100%;
+  overflow: scroll;
+  overflow-x: scroll;
+}
+
+.cupSizeFilterInactive {
+  background-color: var(--philippineBronze);
+  border: none;
+  border-radius: 0.6rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-items: center;
+  justify-content: space-evenly;
+  width: 6.5rem;
+  margin: 0 0.5rem;
+  padding: 0.4rem 0.8rem;
+}
+
+.cupSizeFilterActive {
+  background-color: var(--peru);
+  border: none;
+  border-radius: 0.6rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-items: center;
+  justify-content: space-evenly;
+  width: 6.5rem;
+  margin: 0 0.5rem;
+  padding: 0.4rem 0.8rem;
+}
+
+.filterCupSizes {
+  color: var(--antiqueWhite);
+  width: 5rem;
+  margin-top: 0.4rem;
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+
 .filterBtn {
   background-color: var(--bisque);
   border: none;
