@@ -1,3 +1,12 @@
+@keyframes slideInFromLeft {
+  0% {
+    transform: translateX(-10rem);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
 .searchMethodsContainer {
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
   border-radius: 0.8rem;
@@ -7,6 +16,12 @@
   width: 80%;
   margin: 1.5rem 0;
   padding: 1.3rem;
+
+  animation-duration: 1s; /* the duration of the animation */
+  animation-timing-function: ease-out; /* how the animation will behave */
+  animation-delay: 0s; /* how long to delay the animation from starting */
+  animation-iteration-count: 1; /* how many times the animation will play */
+  animation-name: slideInFromLeft; /* the name of the animation we defined above */
 }
 
 .searchMethodsRdBtnsContainer {
