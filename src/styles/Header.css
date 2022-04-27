@@ -1,3 +1,12 @@
+@keyframes slideInFromTop {
+  0% {
+    transform: translateY(-10rem);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
 .header {
   background-color: var(--mediumCarmine);
   display: flex;
@@ -67,6 +76,12 @@
   align-items: center;
   width: 5rem;
   height: 100%;
+
+  animation-duration: 1s; /* the duration of the animation */
+  animation-timing-function: ease-out; /* how the animation will behave */
+  animation-delay: 0s; /* how long to delay the animation from starting */
+  animation-iteration-count: 1; /* how many times the animation will play */
+  animation-name: slideInFromTop; /* the name of the animation we defined above */
 }
 
 #hambBtnFlipper {
