@@ -1,21 +1,3 @@
-@keyframes slideInFromTop {
-  0% {
-    transform: translateY(-10rem);
-  }
-  100% {
-    transform: translateY(0);
-  }
-}
-
-@keyframes slideInFromLeft {
-  0% {
-    transform: translateX(-10rem);
-  }
-  100% {
-    transform: translateX(0);
-  }
-}
-
 .header {
   background-color: var(--mediumCarmine);
   display: flex;
@@ -52,15 +34,6 @@
   width: 5rem;
   margin-right: 1rem;
 }
-
-@keyframes spin {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
-} 
 
 .loader {
   border: 0.3rem solid var(--americanBronze);

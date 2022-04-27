@@ -12,6 +12,12 @@
   width: fit-content;
   font-size: 1.6rem;
   font-weight: 700;
+
+  animation-duration: 1s; /* the duration of the animation */
+  animation-timing-function: ease-out; /* how the animation will behave */
+  animation-delay: 0s; /* how long to delay the animation from starting */
+  animation-iteration-count: 1; /* how many times the animation will play */
+  animation-name: slideInFromLeft; /* the name of the animation we defined above */
 }
 
 .capsulesCardsContainer {
@@ -31,15 +37,6 @@
 .capsulesCardsContainer::-webkit-scrollbar-thumb {
   background: var(--bisque);
 }
-
-@keyframes spin {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
-} 
 
 .renderedCapsulesLoader {
   border: 0.3rem solid var(--bisque);

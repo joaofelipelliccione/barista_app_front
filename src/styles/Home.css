@@ -13,15 +13,6 @@
   padding: 3rem 0 1.5rem 0;
 }
 
-@keyframes slideInFromRight {
-  0% {
-    transform: translateX(10rem);
-  }
-  100% {
-    transform: translateX(0);
-  }
-}
-
 .homePageMain h1 {
   color: var(--bisque);
   width: fit-content;
