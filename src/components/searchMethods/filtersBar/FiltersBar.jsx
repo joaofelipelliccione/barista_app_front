@@ -1,14 +1,13 @@
-/* Esse arquivo está com o es-lint desabilitado*/
+/* Esse arquivo está com o es-lint desabilitado */
 import React from 'react';
 import { useSelector } from 'react-redux';
 import PropTypes from 'prop-types';
+import { RiFilterLine, RiFilterOffLine } from 'react-icons/ri';
 import IntensityFilter from './IntensityFilter';
 import RoastingFilter from './RoastingFilter';
 import BitternessFilter from './BitternessFilter';
 import AcidityFilter from './AcidityFilter';
 import RobustnessFilter from './RobustnessFilter';
-import { RiFilterLine } from 'react-icons/ri';
-import { RiFilterOffLine } from 'react-icons/ri';
 import '../../../styles/searchMethods/FiltersBar.css';
 
 function FiltersBar({ setCapsulesToRender }) {
@@ -30,106 +29,42 @@ function FiltersBar({ setCapsulesToRender }) {
   const [robustnessMathSignal, setRobustnessMathSignal] = React.useState('?');
   const [chosenRobustness, setChosenRobustness] = React.useState(1);
 
-  const intensityFilterLogic = (capsulesToRenderArray) => {
-    switch (intensityMathSignal) {
+  const capsMainAttributesFilterLogic = (capsToRenderArray, attribute, mathSignal, chosenValue) => {
+    switch (mathSignal) {
     case '≤':
-      return capsulesToRenderArray
-        .filter(({ capsuleIntensity }) => capsuleIntensity <= Number(chosenIntensity));
+      return capsToRenderArray
+        .filter((capObj) => capObj[attribute] <= chosenValue);
     case '=':
-      return capsulesToRenderArray
-        .filter(({ capsuleIntensity }) => capsuleIntensity === Number(chosenIntensity));
+      return capsToRenderArray
+        .filter((capObj) => capObj[attribute] === chosenValue);
     case '≥':
-      return capsulesToRenderArray
-        .filter(({ capsuleIntensity }) => capsuleIntensity >= Number(chosenIntensity));
+      return capsToRenderArray
+        .filter((capObj) => capObj[attribute] >= chosenValue);
     default:
-      return capsulesToRenderArray;
-    }
-  };
-
-  const roastingFilterLogic = (capsulesToRenderArray) => {
-    switch (roastingMathSignal) {
-    case '≤':
-      return capsulesToRenderArray
-        .filter(({ capsuleRoastingLevel }) => capsuleRoastingLevel <= Number(chosenRoasting));
-    case '=':
-      return capsulesToRenderArray
-        .filter(({ capsuleRoastingLevel }) => capsuleRoastingLevel === Number(chosenRoasting));
-    case '≥':
-      return capsulesToRenderArray
-        .filter(({ capsuleRoastingLevel }) => capsuleRoastingLevel >= Number(chosenRoasting));
-    default:
-      return capsulesToRenderArray;
-    }
-  };
-
-  const bitternessFilterLogic = (capsulesToRenderArray) => {
-    switch (bitternessMathSignal) {
-    case '≤':
-      return capsulesToRenderArray
-        .filter(({ capsuleBitternessLevel }) => capsuleBitternessLevel <= Number(chosenBitterness));
-    case '=':
-      return capsulesToRenderArray
-        .filter(({ capsuleBitternessLevel }) => capsuleBitternessLevel === Number(chosenBitterness));
-    case '≥':
-      return capsulesToRenderArray
-        .filter(({ capsuleBitternessLevel }) => capsuleBitternessLevel >= Number(chosenBitterness));
-    default:
-      return capsulesToRenderArray;
-    }
-  };
-
-  const acidityFilterLogic = (capsulesToRenderArray) => {
-    switch (acidityMathSignal) {
-    case '≤':
-      return capsulesToRenderArray
-        .filter(({ capsuleAcidityLevel }) => capsuleAcidityLevel <= Number(chosenAcidity));
-    case '=':
-      return capsulesToRenderArray
-        .filter(({ capsuleAcidityLevel }) => capsuleAcidityLevel === Number(chosenAcidity));
-    case '≥':
-      return capsulesToRenderArray
-        .filter(({ capsuleAcidityLevel }) => capsuleAcidityLevel >= Number(chosenAcidity));
-    default:
-      return capsulesToRenderArray;
-    }
-  };
-
-  const robustnessFilterLogic = (capsulesToRenderArray) => {
-    switch (robustnessMathSignal) {
-    case '≤':
-      return capsulesToRenderArray
-        .filter(({ capsuleRobustnessLevel }) => capsuleRobustnessLevel <= Number(chosenRobustness));
-    case '=':
-      return capsulesToRenderArray
-        .filter(({ capsuleRobustnessLevel }) => capsuleRobustnessLevel === Number(chosenRobustness));
-    case '≥':
-      return capsulesToRenderArray
-        .filter(({ capsuleRobustnessLevel }) => capsuleRobustnessLevel >= Number(chosenRobustness));
-    default:
-      return capsulesToRenderArray;
+      return capsToRenderArray;
     }
   };
 
   const onFilter = () => {
-    let capsulesToRenderArray = allCapsulesArr;
+    let capsToRenderArr = allCapsulesArr;
 
     if (intensityMathSignal !== '?') {
-      capsulesToRenderArray = intensityFilterLogic(capsulesToRenderArray);
+      capsToRenderArr = capsMainAttributesFilterLogic(capsToRenderArr, 'capsuleIntensity', intensityMathSignal, chosenIntensity);
     }
     if (roastingMathSignal !== '?') {
-      capsulesToRenderArray = roastingFilterLogic(capsulesToRenderArray);
+      capsToRenderArr = capsMainAttributesFilterLogic(capsToRenderArr, 'capsuleRoastingLevel', roastingMathSignal, chosenRoasting);
     }
     if (bitternessMathSignal !== '?') {
-      capsulesToRenderArray = bitternessFilterLogic(capsulesToRenderArray);
+      capsToRenderArr = capsMainAttributesFilterLogic(capsToRenderArr, 'capsuleBitternessLevel', bitternessMathSignal, chosenBitterness);
     }
     if (acidityMathSignal !== '?') {
-      capsulesToRenderArray = acidityFilterLogic(capsulesToRenderArray);
+      capsToRenderArr = capsMainAttributesFilterLogic(capsToRenderArr, 'capsuleAcidityLevel', acidityMathSignal, chosenAcidity);
     }
     if (robustnessMathSignal !== '?') {
-      capsulesToRenderArray = robustnessFilterLogic(capsulesToRenderArray);
+      capsToRenderArr = capsMainAttributesFilterLogic(capsToRenderArr, 'capsuleRobustnessLevel', robustnessMathSignal, chosenRobustness);
     }
 
-    setCapsulesToRender(capsulesToRenderArray);
+    setCapsulesToRender(capsToRenderArr);
     setIsFilterActive(true);
   };
 
@@ -182,7 +117,7 @@ function FiltersBar({ setCapsulesToRender }) {
       />
       <button
         type="button"
-        className={ isFilterActive ? "clearFilterBtn" : "filterBtn" }
+        className={ isFilterActive ? 'clearFilterBtn' : 'filterBtn' }
         onClick={ isFilterActive ? onCleanFilter : onFilter }
         disabled={
           intensityMathSignal === '?'
