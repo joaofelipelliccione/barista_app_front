@@ -32,6 +32,25 @@
   background: var(--bisque);
 }
 
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+} 
+
+.renderedCapsulesLoader {
+  border: 0.3rem solid var(--americanBronze);
+  border-top: 0.3rem solid var(--bisque);
+  border-radius: 50%;
+  width: 5rem;
+  height: 5rem;
+  margin-top: 1.5rem;
+  animation: spin 1s linear infinite;
+}
+
 .capsulesNotFound {
   border-radius: 1.5rem;
   width: 30rem;

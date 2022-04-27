@@ -63,11 +63,13 @@ function RenderedCapsules({ isFetching, capsulesToRender }) {
         </article>
       ) : (
         <article className="capsulesCardsContainer">
-          <img
-            className="capsulesNotFound"
-            src={ spilledCoffe }
-            alt="Capsules Not Found"
-          />
+          { !isFetching ? (
+            <img
+              className="capsulesNotFound"
+              src={ spilledCoffe }
+              alt="Capsules Not Found"
+            />
+          ) : (<div className="renderedCapsulesLoader" />) }
         </article>) }
     </section>
   );
