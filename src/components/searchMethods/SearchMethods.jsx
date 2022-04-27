@@ -11,6 +11,7 @@ function SearchMethods({ searchMethod, setSearchMethod,
     <div className="searchMethodsContainer">
       <Radios
         setSearchMethod={ setSearchMethod }
+        setCapsulesToRender={ setCapsulesToRender }
       />
       { searchMethod === 'name' ? (
         <SearchBar
