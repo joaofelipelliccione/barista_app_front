@@ -44,6 +44,15 @@ html {
   }
 }
 
+@keyframes slideInFromBottom {
+  0% {
+    transform: translateY(10rem);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
 @keyframes slideInFromRight {
   0% {
     transform: translateX(10rem);
