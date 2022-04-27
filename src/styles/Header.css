@@ -35,16 +35,6 @@
   margin-right: 1rem;
 }
 
-.loader {
-  border: 0.3rem solid var(--americanBronze);
-  border-top: 0.3rem solid var(--mediumCarmine);
-  border-radius: 50%;
-  width: 1.8rem;
-  height: 1.8rem;
-  margin-right: 0.8rem;
-  animation: spin 1s linear infinite;
-}
-
 .logoContainer a h1 {
   color: var(--bisque);
   font-size: 1.5rem;

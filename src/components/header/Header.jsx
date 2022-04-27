@@ -1,12 +1,11 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import baristappLogo from '../../images/baristapp-logo.png';
 import HamburguerBtn from './HamburguerBtn';
 import HamburgerContent from './HamburgerContent';
 import '../../styles/Header.css';
 
-function Header({ isFetching }) {
+function Header() {
   const [isHambMenuOpen, setIsHambMenuOpen] = React.useState(false);
 
   return (
@@ -17,9 +16,7 @@ function Header({ isFetching }) {
       <div className="centeredHeader">
         <div className="logoContainer">
           <Link to="/">
-            { !isFetching ? (
-              <img src={ baristappLogo } alt="Logo Baristapp" />
-            ) : (<div className="loader" />) }
+            <img src={ baristappLogo } alt="Logo Baristapp" />
             <h1>baristapp</h1>
           </Link>
         </div>
@@ -36,13 +33,5 @@ function Header({ isFetching }) {
     </header>
   );
 }
-
-Header.propTypes = {
-  isFetching: PropTypes.bool,
-};
-
-Header.defaultProps = {
-  isFetching: false,
-};
 
 export default Header;
