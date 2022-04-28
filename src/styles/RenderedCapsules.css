@@ -86,7 +86,7 @@
 }
 
 .eachCapsuleCardContainer1 {
-  /* border: solid 1px black;/ */
+  /* border: solid 1px black; */
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -126,9 +126,11 @@
   color: var(--rootBeer);
   display: flex;
   flex-direction: column;
+  align-items: center;
+  justify-items: center;
+  text-align: center;
   font-size: 0.95rem;
   font-weight: 600;
-  align-items: center;
   width: 50%;
   text-decoration: none;
 }
