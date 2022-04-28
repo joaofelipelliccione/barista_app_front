@@ -5,7 +5,8 @@
 }
 
 .originalPageMain {
-  background-color: var(--mediumCarmine);
+  background-image: url('../images/original-capsules-background.jpg');
+  background-size: cover;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -14,10 +15,13 @@
 }
 
 .originalPageMain h1 {
-  color: var(--bisque);
+  background-color: var(--fawn);
+  color: var(--americanBronze);
+  border-radius: 5px 15px;
   width: fit-content;
-  font-size: 1.8rem;
+  font-size: 1.6rem;
   font-weight: 700;
+  padding: 0.5rem 0.9rem;
 
   animation-duration: 1s; /* the duration of the animation */
   animation-timing-function: ease-out; /* how the animation will behave */
