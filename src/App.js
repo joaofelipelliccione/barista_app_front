@@ -1,6 +1,7 @@
 import React from 'react';
 import { Routes, Route } from 'react-router-dom';
 import Home from './pages/Home';
+import Original from './pages/Original';
 import CapsuleDetails from './pages/CapsuleDetails';
 import './styles/App.css';
 
@@ -9,7 +10,7 @@ function App() {
     <Routes>
       <Route path="/" element={ <Home /> } />
       <Route path="/capsule/:id" element={ <CapsuleDetails /> } />
-      {/* <Route path="/register/success" element={ <RegisterSuccess /> } /> */}
+      <Route path="/capsules/original" element={ <Original /> } />
       {/* <Route path="/login" element={ <Login /> } /> */}
       {/* <Route path="/profile" element={ <Profile /> } /> */}
       {/* <Route path="/profile/edit" element={ <EditProfileInfo /> } /> */}

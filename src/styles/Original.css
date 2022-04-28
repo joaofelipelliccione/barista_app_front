@@ -1,0 +1,27 @@
+.originalPage {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.originalPageMain {
+  background-color: var(--mediumCarmine);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 3rem 0 1.5rem 0;
+}
+
+.originalPageMain h1 {
+  color: var(--bisque);
+  width: fit-content;
+  font-size: 1.8rem;
+  font-weight: 700;
+
+  animation-duration: 1s; /* the duration of the animation */
+  animation-timing-function: ease-out; /* how the animation will behave */
+  animation-delay: 0s; /* how long to delay the animation from starting */
+  animation-iteration-count: 1; /* how many times the animation will play */
+  animation-name: slideInFromRight; /* the name of the animation we defined above */
+}

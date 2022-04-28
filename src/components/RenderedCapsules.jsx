@@ -13,7 +13,7 @@ function RenderedCapsules({ isFetching, capsulesToRender }) {
       { isFetching ? (<h1>Buscando...</h1>) : (
         <h1>
           { capsulesToRender.length !== 0 ? (
-            'Cápsulas (Original & Vertuo)'
+            'Cápsulas'
           ) : ('Nenhuma Cápsula Encontrada') }
         </h1>
       ) }
