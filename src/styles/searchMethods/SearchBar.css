@@ -10,8 +10,10 @@
   width: 75% !important;
 }
 
-.css-1s2u09g-control {
+.css-1s2u09g-control, .css-1pahdxg-control {
   background-color: var(--mediumCarmine) !important;
+  border-color: var(--bisque) !important;
+  box-shadow: none !important;
 }
 
 .css-qc6sy-singleValue {
@@ -20,7 +22,13 @@
   font-weight: 700 !important;
 }
 
-#react-select-2-placeholder {
+#react-select-2-listbox, .css-26l3qy-menu {
+  background-color: var(--fawn) !important;
+  color: var(--philippineBronze);
+  font-weight: 700;
+}
+
+#react-select-2-placeholder, .css-14el2xx-placeholder {
   color: var(--antiqueWhite) !important;
   font-size: 1.2rem !important;
   font-weight: 700 !important;
