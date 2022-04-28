@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import baristappLogo from '../../images/baristapp-logo.png';
+import baristappLogo from '../../images/baristapp-logo.gif';
 import HamburguerBtn from './HamburguerBtn';
 import HamburgerContent from './HamburgerContent';
 import '../../styles/Header.css';
