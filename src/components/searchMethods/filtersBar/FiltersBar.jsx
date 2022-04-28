@@ -1,6 +1,5 @@
 /* Esse arquivo está com o es-lint desabilitado */
 import React from 'react';
-import { useSelector } from 'react-redux';
 import PropTypes from 'prop-types';
 import { RiFilterLine, RiFilterOffLine } from 'react-icons/ri';
 import IntensityFilter from './IntensityFilter';
@@ -11,8 +10,7 @@ import RobustnessFilter from './RobustnessFilter';
 import CupSizesFilter from './CupSizesFilter';
 import '../../../styles/searchMethods/FiltersBar.css';
 
-function FiltersBar({ setCapsulesToRender }) {
-  const allCapsulesArr = useSelector((state) => state.capsules).allCapsules;
+function FiltersBar({ capsulesArray, setCapsulesToRender }) {
   const [isFilterActive, setIsFilterActive] = React.useState(false);
 
   const [intensityMathSignal, setIntensityMathSignal] = React.useState('?');
@@ -57,7 +55,7 @@ function FiltersBar({ setCapsulesToRender }) {
   };
 
   const onFilter = () => {
-    let capsToRenderArr = allCapsulesArr;
+    let capsToRenderArr = capsulesArray;
 
     if (intensityMathSignal !== '?') {
       capsToRenderArr = capsMainAttributesFilterLogic(capsToRenderArr, 'capsuleIntensity', intensityMathSignal, chosenIntensity);
@@ -107,7 +105,7 @@ function FiltersBar({ setCapsulesToRender }) {
   };
 
   const onCleanFilter = () => {
-    setCapsulesToRender(allCapsulesArr);
+    setCapsulesToRender(capsulesArray);
     setIntensityMathSignal('?');
     setChosenIntensity(1);
     setRoastingMathSignal('?');
@@ -210,6 +208,9 @@ function FiltersBar({ setCapsulesToRender }) {
 }
 
 FiltersBar.propTypes = {
+  // eslint-disable-next-line react/forbid-prop-types
+  capsulesArray: PropTypes.array.isRequired,
+
   setCapsulesToRender: PropTypes.func.isRequired,
 };
 

@@ -5,21 +5,24 @@ import SearchBar from './SearchBar';
 import FiltersBar from './filtersBar/FiltersBar';
 import '../../styles/searchMethods/SearchMethods.css';
 
-function SearchMethods({ searchMethod, setSearchMethod,
+function SearchMethods({ capsulesArray, searchMethod, setSearchMethod,
   setIsFetching, setCapsulesToRender }) {
   return (
     <div className="searchMethodsContainer">
       <Radios
+        capsulesArray={ capsulesArray }
         setSearchMethod={ setSearchMethod }
         setCapsulesToRender={ setCapsulesToRender }
       />
       { searchMethod === 'name' ? (
         <SearchBar
+          capsulesArray={ capsulesArray }
           setIsFetching={ setIsFetching }
           setCapsulesToRender={ setCapsulesToRender }
         />
       ) : (
         <FiltersBar
+          capsulesArray={ capsulesArray }
           setCapsulesToRender={ setCapsulesToRender }
         />
       ) }
@@ -28,6 +31,9 @@ function SearchMethods({ searchMethod, setSearchMethod,
 }
 
 SearchMethods.propTypes = {
+  // eslint-disable-next-line react/forbid-prop-types
+  capsulesArray: PropTypes.array.isRequired,
+
   searchMethod: PropTypes.string.isRequired,
   setSearchMethod: PropTypes.func.isRequired,
   setIsFetching: PropTypes.func.isRequired,

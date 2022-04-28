@@ -1,10 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { useSelector } from 'react-redux';
 
-function Radios({ setSearchMethod, setCapsulesToRender }) {
-  const allCapsulesArr = useSelector((state) => state.capsules).allCapsules;
-
+function Radios({ capsulesArray, setSearchMethod, setCapsulesToRender }) {
   return (
     <section className="searchMethodsRdBtnsContainer">
       <label
@@ -18,7 +15,7 @@ function Radios({ setSearchMethod, setCapsulesToRender }) {
           value="name"
           onClick={ ({ target }) => {
             setSearchMethod(target.value);
-            setCapsulesToRender(allCapsulesArr);
+            setCapsulesToRender(capsulesArray);
           } }
           defaultChecked
         />
@@ -35,7 +32,7 @@ function Radios({ setSearchMethod, setCapsulesToRender }) {
           value="filters"
           onClick={ ({ target }) => {
             setSearchMethod(target.value);
-            setCapsulesToRender(allCapsulesArr);
+            setCapsulesToRender(capsulesArray);
           } }
         />
         ...por filtros
@@ -45,6 +42,9 @@ function Radios({ setSearchMethod, setCapsulesToRender }) {
 }
 
 Radios.propTypes = {
+  // eslint-disable-next-line react/forbid-prop-types
+  capsulesArray: PropTypes.array.isRequired,
+
   setSearchMethod: PropTypes.func.isRequired,
   setCapsulesToRender: PropTypes.func.isRequired,
 };

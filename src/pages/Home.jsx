@@ -11,6 +11,7 @@ function Home() {
   const ALL_CAPSULES_ENDPOINT = 'https://barista-app-back.herokuapp.com/capsules';
 
   const [isFetching, setIsFetching] = React.useState(false);
+  const [capsulesArray, setCapsulesArray] = React.useState([]);
   const [capsulesToRender, setCapsulesToRender] = React.useState([]);
   const [searchMethod, setSearchMethod] = React.useState('name');
 
@@ -23,10 +24,10 @@ function Home() {
     fetch(ALL_CAPSULES_ENDPOINT)
       .then((res) => res.json())
       .then((data) => {
+        setCapsulesArray(data);
         setCapsulesToRender(data);
         dispatch(capsulesAC(data));
         localStorage.setItem('allCapsules', JSON.stringify(data));
-        console.log(data);
         setIsFetching(false);
       });
   }, []);
@@ -37,6 +38,7 @@ function Home() {
       <main className="homePageMain">
         <h1>Ache sua cápsula Nespresso®...</h1>
         <SearchMethods
+          capsulesArray={ capsulesArray }
           searchMethod={ searchMethod }
           setSearchMethod={ setSearchMethod }
           setIsFetching={ setIsFetching }

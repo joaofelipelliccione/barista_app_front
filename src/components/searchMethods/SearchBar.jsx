@@ -1,15 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { useSelector } from 'react-redux';
 import Select from 'react-select';
 import { BsSearch } from 'react-icons/bs';
 import '../../styles/searchMethods/SearchBar.css';
 
-function SearchBar({ setIsFetching, setCapsulesToRender }) {
+function SearchBar({ capsulesArray, setIsFetching, setCapsulesToRender }) {
   const [searchedCapsule, setSearchedCapsule] = React.useState('');
 
-  const allCapsulesArr = useSelector((state) => state.capsules).allCapsules;
-  const allCapsulesNamesArr = allCapsulesArr.map(({ capsuleName }) => capsuleName);
+  const allCapsulesNamesArr = capsulesArray.map(({ capsuleName }) => capsuleName);
   const reactSelectArr = allCapsulesNamesArr.map((opt) => ({ label: opt, value: opt }));
 
   const onClickSearchBtn = async () => {
@@ -31,7 +29,7 @@ function SearchBar({ setIsFetching, setCapsulesToRender }) {
         onChange={ (opt) => setSearchedCapsule(opt.value) }
         onFocus={ () => {
           const inputFieldValue = document.querySelector('.css-qc6sy-singleValue');
-          setCapsulesToRender(allCapsulesArr);
+          setCapsulesToRender(capsulesArray);
           setSearchedCapsule('');
           inputFieldValue.innerText = '';
         } }
@@ -49,6 +47,9 @@ function SearchBar({ setIsFetching, setCapsulesToRender }) {
 }
 
 SearchBar.propTypes = {
+  // eslint-disable-next-line react/forbid-prop-types
+  capsulesArray: PropTypes.array.isRequired,
+
   setIsFetching: PropTypes.func.isRequired,
   setCapsulesToRender: PropTypes.func.isRequired,
 };
