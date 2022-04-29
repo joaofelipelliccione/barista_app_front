@@ -1,11 +1,14 @@
 /* eslint-disable max-len */
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import '../../styles/Header.css';
 
 function HamburgerContent({ isHambMenuOpen, setIsHambMenuOpen }) {
   const dropdownRef = React.useRef(null);
+
+  const location = useLocation();
+  const currentPath = location.pathname;
 
   React.useEffect(() => {
     const pageClickEvent = ({ target }) => {
@@ -31,6 +34,7 @@ function HamburgerContent({ isHambMenuOpen, setIsHambMenuOpen }) {
       <div className="hambContentSubContainer1">
         <Link
           className="capsulesLinks"
+          id={ currentPath === '/capsules/original' && 'capsulesLinksInactive' }
           to="/capsules/original"
         >
           <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor">
@@ -45,6 +49,7 @@ function HamburgerContent({ isHambMenuOpen, setIsHambMenuOpen }) {
         </Link>
         <Link
           className="capsulesLinks"
+          id={ currentPath === '/capsules/vertuo' && 'capsulesLinksInactive' }
           to="/capsules/vertuo"
         >
           <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="none">
