@@ -3,6 +3,7 @@ import React from 'react';
 import { useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
 import swal from 'sweetalert';
+import { BsShare, BsClipboardCheck } from 'react-icons/bs';
 import squaresMachine from '../sharedFunctions/squaresMachine';
 import Header from '../components/header/Header';
 import Caption from '../components/Caption';
@@ -23,8 +24,13 @@ import '../styles/Alerts.css';
 
 function CapsuleDetails() {
   const { id } = useParams();
+
   const allCapsulesArr = useSelector((state) => state.capsules).allCapsules;
   const capsuleInfo = allCapsulesArr.find(({ capsuleId }) => capsuleId === Number(id));
+  const FIVE = 5;
+
+  const [isShareBtnClicked, setIsShareBtnClicked] = React.useState(false);
+
   const cupSizesArray = [
     { size: 'ristretto25', imgPath: ristretto25, name: 'Ristretto', ml: 25 },
     { size: 'expresso40', imgPath: expresso40, name: 'Expresso', ml: 40 },
@@ -36,7 +42,13 @@ function CapsuleDetails() {
     { size: 'cappuccino', imgPath: cappuccino, name: 'Cappuccino', ml: 180 },
     { size: 'dblCappuccino', imgPath: dblCappuccino, name: 'Double Cappuccino', ml: 360 },
   ];
-  const FIVE = 5;
+
+  const onClickShareBtn = (capsuleId) => {
+    const TWO_SECONDS = 2000;
+    navigator.clipboard.writeText(`https://baristapp.vercel.app/capsule/${capsuleId}`);
+    setIsShareBtnClicked(true);
+    setTimeout(() => setIsShareBtnClicked(false), TWO_SECONDS);
+  };
 
   return (
     <div className="capsuleDetailsPage">
@@ -47,13 +59,25 @@ function CapsuleDetails() {
           src={ capsuleInfo.backgroundImgSrc }
           alt="Imagem de capa"
         />
-        <div className="capsuleNameAndImg">
-          <img
-            src={ capsuleInfo.capsuleImgSrc }
-            alt="Imagem da capsula"
-          />
-          <h1>{ capsuleInfo.capsuleName }</h1>
-        </div>
+
+        <section className="capsuleDetailsContainer0">
+          <div className="capsuleNameAndImg">
+            <img
+              src={ capsuleInfo.capsuleImgSrc }
+              alt="Imagem da capsula"
+            />
+            <h1>{ capsuleInfo.capsuleName }</h1>
+          </div>
+          <button
+            className="capsuleDetailsShareBtn"
+            type="button"
+            onClick={ () => onClickShareBtn(id) }
+            disabled={ isShareBtnClicked }
+          >
+            {isShareBtnClicked ? <BsClipboardCheck /> : <BsShare />}
+          </button>
+        </section>
+
         <section className="capsuleDetailsContainer1">
           <div className="capsuleDetailsContainer1-1">
             <h4>Medidas: </h4>
