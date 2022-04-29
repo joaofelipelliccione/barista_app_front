@@ -19,7 +19,7 @@ import carafe535 from '../images/cupSizes/img-carafe535.svg';
 import cappuccino from '../images/cupSizes/img-cappuccino.svg';
 import dblCappuccino from '../images/cupSizes/img-dbl_cappuccino.svg';
 
-import '../styles/capsuleDetails/CapsuleDetails.css';
+import '../styles/CapsuleDetails.css';
 import '../styles/Alerts.css';
 
 function CapsuleDetails() {
