@@ -5,8 +5,10 @@
 }
 
 .vertuoPageMain {
-  /* background-image: url('../images/original-capsules-background.jpg'); */
+  background-image: url('../images/vertuo-capsules-background.jpg');
   background-size: cover;
+  background-repeat: no-repeat;
+  background-position-x:-1.7rem;
   display: flex;
   flex-direction: column;
   align-items: center;
