@@ -39,7 +39,7 @@ function Vertuo() {
         <h1>
           Pesquise dentre as
           {' '}
-          <em>Vertuo</em>
+          <em>Vertuo®</em>
           ...
         </h1>
         <SearchMethods
