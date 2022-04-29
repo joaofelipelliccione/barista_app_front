@@ -1,8 +1,11 @@
-import { SET_ALL_CAPSULES, SET_ORIGINAL_CAPSULES } from '../actions/capsulesAC';
+import { SET_ALL_CAPSULES,
+  SET_ORIGINAL_CAPSULES,
+  SET_VERTUO_CAPSULES } from '../actions/capsulesAC';
 
 const INITIAL_STATE = {
   allCapsules: JSON.parse(localStorage.getItem('allCapsules')) || [],
   originalCapsules: JSON.parse(localStorage.getItem('originalCapsules')) || [],
+  vertuoCapsules: JSON.parse(localStorage.getItem('vertuoCapsules')) || [],
 };
 
 function user(state = INITIAL_STATE, action) {
@@ -17,6 +20,12 @@ function user(state = INITIAL_STATE, action) {
     return {
       ...state,
       originalCapsules: action.originalCapsulesArray,
+    };
+
+  case SET_VERTUO_CAPSULES:
+    return {
+      ...state,
+      vertuoCapsules: action.vertuoCapsulesArray,
     };
 
   default:
