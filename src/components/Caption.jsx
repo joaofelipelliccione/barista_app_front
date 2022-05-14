@@ -14,7 +14,7 @@ function Caption() {
       captionDescription: 'É autoexplicativo, todavia, ressalta-se que quanto maior o nível, mais tempo o sabor do café permanecerá na boca.',
     },
     { captionTitle: 'Acidez',
-      captionDescription: 'Quanto maior o nível, mais azedo será o sabor do café.',
+      captionDescription: 'Quanto maior o nível, mais azedo será o sabor do café',
     },
     { captionTitle: 'Corpo',
       captionDescription: 'Quanto maior o nível, mais viscoso e denso será o café.',
